@@ -1,0 +1,129 @@
+/* Carousel Container */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%; /* Use percentage for responsiveness */
+  max-width: 1340px; /* Cap for very large screens */
+  /* margin: 20px auto; */
+  margin-left: 20px;
+}
+
+/* Carousel Track Container */
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.5s ease-in-out;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.carousel-slide {
+  /* Default for larger screens (4 slides) */
+  min-width: calc(25% - 15px);
+  flex: 0 0 auto;
+}
+
+/* Medium screens (3 slides) */
+@media (max-width: 1024px) {
+  .carousel-slide {
+    min-width: calc(33.33% - 15px);
+  }
+}
+
+/* Small screens (2 slides) */
+@media (max-width: 768px) {
+  .carousel-slide {
+    min-width: calc(50% - 15px);
+  }
+}
+
+/* Mobile (1 slide) */
+@media (max-width: 480px) {
+  .carousel-slide {
+    min-width: calc(100% - 15px);
+  }
+}
+
+.participant-card {
+  text-align: center;
+  /* background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px; */
+  /* padding: 10px; */
+}
+
+.participant-image {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Carousel Buttons */
+.carousel-button {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Adjust button positioning */
+.carousel-button.prev {
+  left: 20px; /* Adjusted from -20px */
+}
+
+.carousel-button.next {
+  right: 20px; /* Adjusted from -20px */
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Image container for aspect ratio */
+/* .image-container {
+  width: 100%;
+  padding-top: 100%; 
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+} */
+
+.image-container {
+  padding-top: 100%; /* 1:1 aspect ratio */
+  position: relative;
+}
+
+/* .participant-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+} */
+
+.participant-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents distortion */
+}

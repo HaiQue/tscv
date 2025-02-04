@@ -1,0 +1,71 @@
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: row; /* Stack buttons vertically */
+  align-items: center; /* Center align horizontally */
+  justify-content: center; /* Center align vertically */
+  gap: 160px; /* Space between buttons */
+  margin: 0; /* Remove any default margins */
+  margin-bottom: 80px;
+}
+
+/* General Button Styles */
+.btn {
+  padding: 12px 40px;
+  border: none;
+  border-radius: 14px;
+  font-size: 14px; /* Updated font size */
+  cursor: pointer;
+  /* transition: background 0.3s ease, transform 0.2s ease; */
+}
+
+/* Hover and Focus Effects */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Primary Button with Gradient Background */
+.btn-primary {
+  background: linear-gradient(to right, #ff6500, #ffdab3);
+  color: rgb(9, 1, 95);
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover Effect for Primary Button */
+.btn-primary:hover {
+  background: linear-gradient(to right, #ff4800, #ffedb3);
+  color: rgb(9, 1, 95);
+  font-weight: 900;
+}
+
+.btn-secondary {
+  background: linear-gradient(to right, #ff6500, #ffdab3);
+  color: rgb(9, 1, 95);
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 80px;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #ff4800, #ffedb3);
+  color: rgb(9, 1, 95);
+  font-weight: 900;
+}
+
+/* Disabled Button */
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  color: #666666;
+}
