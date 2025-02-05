@@ -5,7 +5,7 @@
   justify-content: center;
   position: relative;
   width: 100%; /* Use percentage for responsiveness */
-  max-width: 1340px; /* Cap for very large screens */
+  /*max-width: 1340px;  Cap for very large screens */
   /* margin: 20px auto; */
   margin-left: 20px;
 }
@@ -26,7 +26,7 @@
 
 .carousel-slide {
   /* Default for larger screens (4 slides) */
-  min-width: calc(25% - 15px);
+  min-width: calc(16.5% - 10px);
   flex: 0 0 auto;
 }
 
