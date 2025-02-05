@@ -12,6 +12,7 @@ const participants = [
   { name: "Hal Gregersen", image: photo2 },
 ];
 
+//fking vscode bug
 function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = participants.length;
