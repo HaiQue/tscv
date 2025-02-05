@@ -1,12 +1,20 @@
 import { useState } from "react";
-import "./Carousel.css"; // Add this if you want to keep the carousel styles separate.
+import "./Carousel.css";
 import photo1 from "../imgs/photo_1.jpg";
 import photo2 from "../imgs/photo_2.jpg";
 
+const participants = [
+  { name: "Johan Norberg", image: photo1 },
+  { name: "David McWilliams", image: photo2 },
+  { name: "Erin Meyer", image: photo1 },
+  { name: "Manfred Kets de Vries", image: photo2 },
+  { name: "Amy Gallo", image: photo1 },
+  { name: "Hal Gregersen", image: photo2 },
+];
+
 function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalSlides = 9;
-  const visibleSlides = 4;
+  const totalSlides = participants.length;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
@@ -15,8 +23,6 @@ function Carousel() {
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
-
-  const images = [photo1, photo2];
 
   return (
     <div className="carousel">
@@ -30,17 +36,17 @@ function Carousel() {
             transform: `translateX(-${(currentIndex / totalSlides) * 100}%)`,
           }}
         >
-          {[...Array(totalSlides)].map((_, index) => (
+          {participants.map((participant, index) => (
             <div className="carousel-slide" key={index}>
               <div className="participant-card">
                 <div className="image-container">
                   <img
-                    src={images[index % images.length]}
-                    alt={`Participant ${index + 1}`}
+                    src={participant.image}
+                    alt={participant.name}
                     className="participant-image"
                   />
+                  <p className="participant-name">{participant.name}</p>
                 </div>
-                <p>Vardenis Pavardenis {index + 1}</p>
               </div>
             </div>
           ))}
