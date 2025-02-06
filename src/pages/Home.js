@@ -4,7 +4,7 @@ import "../App.css";
 import "./Home.css";
 import logoImage from "../imgs/Logo.png";
 import Cybercity from "../imgs/Cybercity.png";
-import Carousel from "../components/Carousel";
+import ImageGrid from "../components/ImageGrid";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -63,7 +63,7 @@ function Home() {
       </div>
 
       <div id="text1" className="section text1">
-        <Carousel />
+        <ImageGrid />
       </div>
 
       <div id="text2" className="section text2">

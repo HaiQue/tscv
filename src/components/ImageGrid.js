@@ -1,10 +1,11 @@
-import { useState } from "react";
-import "./Carousel.css";
+// import { useState } from "react";
+import "./ImageGrid.css";
 import photo1 from "../imgs/photo_1.jpg";
 import photo2 from "../imgs/photo_2.jpg";
+import photo3 from "../imgs/test.jpg";
 
 const participants = [
-  { name: "Johan Norberg", image: photo1 },
+  { name: "Johan Norberg", image: photo3 },
   { name: "David McWilliams", image: photo2 },
   { name: "Erin Meyer", image: photo1 },
   { name: "Manfred Kets de Vries", image: photo2 },
@@ -12,31 +13,11 @@ const participants = [
   { name: "Hal Gregersen", image: photo2 },
 ];
 
-//fking vscode bug
 function Carousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const totalSlides = participants.length;
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
   return (
     <div className="carousel">
-      <button className="carousel-button prev" onClick={prevSlide}>
-        &#9664;
-      </button>
       <div className="carousel-track-container">
-        <div
-          className="carousel-track"
-          style={{
-            transform: `translateX(-${(currentIndex / totalSlides) * 100}%)`,
-          }}
-        >
+        <div className="carousel-track">
           {participants.map((participant, index) => (
             <div className="carousel-slide" key={index}>
               <div className="participant-card">
@@ -53,9 +34,6 @@ function Carousel() {
           ))}
         </div>
       </div>
-      <button className="carousel-button next" onClick={nextSlide}>
-        &#9654;
-      </button>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
 } /* 40px */
 h2 {
-  font-size: 2rem;
+  font-size: 3rem;
 } /* 32px */
 h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 } /* 28px */
 h4 {
   font-size: 1.5rem;
@@ -16,11 +16,6 @@ h5 {
 h6 {
   font-size: 1rem;
 } /* 16px */
-
-/* General App Styles */
-.app-container {
-  padding: 20px;
-}
 
 /* Section Styles */
 .section {
@@ -60,13 +55,12 @@ h6 {
   font-weight: 900;
 }
 
-/* Main Section Layout */
 .main-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 100px;
-  gap: 40px; /* Add gap between columns */
+  gap: 40px;
 }
 
 .right-section {
@@ -85,22 +79,21 @@ h6 {
   text-transform: uppercase;
 }
 
-/* Text Section */
 .text-section {
   max-width: 60%;
   margin-left: 30px;
 }
 
-.text-section h1 {
-  margin-bottom: 1rem;
-}
-
 .text-section h2.orange {
   color: #d5593e;
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
 }
 
 /* Button Adjustments */
+.button-group {
+  margin-top: 20px;
+}
+
 .button-group-horizontal {
   display: flex;
   gap: 15px;
@@ -112,7 +105,6 @@ h6 {
   padding: 12px 24px;
 }
 
-/* Organizer Section */
 .organizer-container {
   display: flex;
   flex-direction: column;
@@ -184,11 +176,7 @@ h6 {
 
 .text-section h1 {
   line-height: 1.1;
-  margin-bottom: 2rem;
-}
-
-.text-section h2.orange {
-  margin-top: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .text3 iframe {
