@@ -1,40 +1,3 @@
-irmai rasciute teniene.
-
-864322641
-
-Procesoriaus modelis:	Intel Core i9-14900KF
-Operatyvioji atmintis (RAM): 64 GB
-Kietojo disko talpa (HDD) : 2TB
-SSD disko talpa: 2TB
-Vaizdo plokštės modelis: Nvidia GeForce RTX4070 Super 
-
-316
-
-1 2 4 8 16
-
-danguolei matulienei
-
-ps4
-
-GIEDRAITYTE
-Ggiedraityte369**
-
-
-
-5.8 punktas Prekiu pervdavimo-priėmimo  akto paprasyti tiekeju.
-
-Vidai paduoti siuos dokumentus.
-Gabrielei perduota
-
-
-Paskambinti del masinos 
-Kaina, padangos, rakteliai, laikas.
-
-
-Printeriu su scaneriu. Brother dcp-l 2620dw
-Klaipedos skyrius
-
-
 1. Apie konferencija informacija
 2. Praneseju info.
 3. Registracija.
@@ -42,82 +5,13 @@ Klaipedos skyrius
 
 Laiskas. Registracija, Priminimas su dienotvarke.
 
-
 Apie kova menesi. paleisime.
 
 Pedaryti responsive.
 
-
-Del laptopu pasiziureti kur jie kaip.
-
-jovitai vidaus 23-25.+
-
-Pasidaryt kopija db pries keicianti.
-
-rokas mateika.
-
-produkcini seni kdr ir i sena.
-
-is kurio grizta is kurio ne.
-
-
-Eprogesa:
-Kristinai ne ant tu id donorai.
-kdr istryns viena id, nes yra 2.
-
-
-2 don
-
-vidaus dokumentai, 
-
-prekiu paslaugu registrai. ne autorius o tvarkytojas fix.
-
-23-24-25
-
-
-228
-app\administrator
-prot=0musis
-
-
-del laptopu, priiemimo-pardavimo aktas.
-
-
-kdr:
-191 - visos
-
-26 - klaidingos
-
-
-esveikatos klausimas.
-
-
-Reikia 3 ar 4 laptopus..
-
-
-1 Vijonei viena jos pastas.
-
-is jos sena  
-
-
-
 fttp
 
 per putty ar FileZilla
-
-
-Kraujobusui specialios laptopo tases
-
-1-3komplektams naujas tases duoti
-
-
-apsilaikymo busena neleistina/klaidinga busena atranka nesekminga ir buvo bandoma atnaujinti duomenys
-neegzistuojantis donoro id.
-
-vienas net neklaida del neegzistuojantis donoro id. 
-
-Rokas Mateika @devocean
-
 
 Registruotis atsidaro forma.
 
@@ -137,12 +31,9 @@ vienas bendras sarasas.
 
 geguzes 13d. Cybercity
 
-
 9d. sekmadieni po darbo 15d migruojami.
 
 Nieko nereikia keisti.
-
-
 
 Pavadinimimo, mokama nemokama,
 
