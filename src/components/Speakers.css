@@ -1,0 +1,82 @@
+.speaker-container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  /* margin: 2rem 0; */
+  min-height: 400px;
+}
+
+.speaker-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.speaker-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.category {
+  color: #ff0000;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.learn-more {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: #d40000;
+}
+
+.speaker-image {
+  flex: 1;
+  max-width: 600px;
+}
+
+.speaker-image img {
+  width: 100%;
+  max-width: 350px;
+  max-height: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .speaker-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .speaker-container.reverse {
+    flex-direction: column;
+  }
+
+  .speaker-content,
+  .speaker-image {
+    max-width: 100%;
+  }
+}

@@ -6,6 +6,7 @@ import logoImage from "../imgs/Logo.png";
 import Cybercity from "../imgs/Cybercity.png";
 import ImageGrid from "../components/ImageGrid";
 import Footer from "../components/Footer";
+import RenderSpeakers from "../components/RenderSpeakers";
 
 function Home() {
   const [showMap, setShowMap] = useState(false);
@@ -65,6 +66,7 @@ function Home() {
       <div id="text1" className="section text1">
         <ImageGrid />
       </div>
+      <RenderSpeakers />
 
       <div id="text2" className="section text2">
         <div className="organizer-container">
