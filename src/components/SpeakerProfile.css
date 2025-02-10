@@ -1,11 +1,25 @@
 .speaker-container {
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 10rem;
   padding: 2rem;
   /* margin: 2rem 0; */
   min-height: 400px;
+}
+
+.speaker-container.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.speaker-container.dark h2.name {
+  color: #ffffff;
+}
+
+.speaker-container.dark {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .speaker-container.reverse {
@@ -14,13 +28,14 @@
 
 .speaker-content {
   flex: 1;
-  max-width: 600px;
+  max-width: 850px;
+  margin-left: 40px;
 }
 
 .category {
   color: #ff0000;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 1rem;
   display: block;
@@ -44,7 +59,7 @@
   border: none;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
@@ -55,13 +70,16 @@
 .speaker-image {
   flex: 1;
   max-width: 600px;
+  margin: auto;
+  margin-left: 50px;
 }
 
 .speaker-image img {
   width: 100%;
   max-width: 350px;
   max-height: 500px;
-  height: auto;
+  height: auto; /* How will be used most likely with prod data */
+  height: 500px; /* temporary fix for 2nd participant */
   object-fit: cover;
 }
 

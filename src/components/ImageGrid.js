@@ -2,10 +2,9 @@
 import "./ImageGrid.css";
 import photo1 from "../imgs/photo_1.jpg";
 import photo2 from "../imgs/photo_2.jpg";
-import photo3 from "../imgs/test.jpg";
 
 const participants = [
-  { name: "Johan Norberg", image: photo3 },
+  { name: "Johan Norberg", image: photo1 },
   { name: "David McWilliams", image: photo2 },
   { name: "Erin Meyer", image: photo1 },
   { name: "Manfred Kets de Vries", image: photo2 },

@@ -1,19 +1,20 @@
 import React from "react";
-import "./Speakers.css";
+import "./SpeakerProfile.css";
 
-const Speakers = ({
+const SpeakerProfile = ({
   imageUrl,
   category,
   name,
   description,
   buttonText,
   imagePosition = "left",
+  theme = "light",
 }) => {
   return (
     <div
       className={`speaker-container ${
         imagePosition === "right" ? "reverse" : ""
-      }`}
+      } ${theme}`}
     >
       <div className="speaker-content">
         <span className="category">{category}</span>
@@ -28,4 +29,4 @@ const Speakers = ({
   );
 };
 
-export default Speakers;
+export default SpeakerProfile;

@@ -4,14 +4,13 @@ body {
   background-color: #a1999930;
   margin: 0;
   padding: 0;
-  color: #333; /* Default text color */
+  color: #333;
 }
 
 button {
   font-family: "Roboto", sans-serif;
 }
 
-/* Utility Classes for Font Weights */
 .roboto-thin {
   font-weight: 100;
 }

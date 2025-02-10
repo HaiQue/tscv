@@ -7,6 +7,7 @@ import Cybercity from "../imgs/Cybercity.png";
 import ImageGrid from "../components/ImageGrid";
 import Footer from "../components/Footer";
 import RenderSpeakers from "../components/RenderSpeakers";
+import Register from "../components/Register";
 
 function Home() {
   const [showMap, setShowMap] = useState(false);
@@ -66,18 +67,12 @@ function Home() {
       <div id="text1" className="section text1">
         <ImageGrid />
       </div>
+
+      <Register />
       <RenderSpeakers />
 
       <div id="text2" className="section text2">
-        <div className="organizer-container">
-          <div className="conference-container-mg-small">
-            <div className="text-column-mg">
-              <h2>REGISTRACIJA Į KONFERENCIJĄ</h2>
-              <h2>200€</h2>
-            </div>
-            <Button label="REGISTRUOTIS" variant="secondary" />
-          </div>
-        </div>
+        <Register />
       </div>
 
       <div id="text3" className="section text3">
