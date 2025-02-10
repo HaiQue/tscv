@@ -96,7 +96,7 @@ h6 {
 
 .button-group-horizontal {
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 .button-group-horizontal .button {
@@ -114,10 +114,10 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 75px;
 }
 
-.conference-container {
+.conference-container-mg-small {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,13 +160,13 @@ h6 {
 }
 
 .cyber-image {
-  width: 500px; /* Adjust image size */
+  width: 650px; /* Adjust image size */
   height: auto;
 }
 
 /* Logo Section */
 .right-section .logo-image {
-  width: 200px;
+  width: 250px;
 }
 
 /* Text Section Adjustments */

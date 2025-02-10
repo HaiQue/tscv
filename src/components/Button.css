@@ -11,10 +11,10 @@
 
 /* General Button Styles */
 .btn {
-  padding: 12px 40px;
+  padding: 16px 80px;
   border: none;
   border-radius: 14px;
-  font-size: 14px; /* Updated font size */
+  font-size: 18px; /* Updated font size */
   cursor: pointer;
   /* transition: background 0.3s ease, transform 0.2s ease; */
 }
@@ -33,7 +33,7 @@
 .btn-primary {
   background: linear-gradient(to right, #ff6500, #ffdab3);
   color: rgb(9, 1, 95);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;

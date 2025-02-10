@@ -68,7 +68,7 @@ function Home() {
 
       <div id="text2" className="section text2">
         <div className="organizer-container">
-          <div className="conference-container">
+          <div className="conference-container-mg-small">
             <div className="text-column-mg">
               <h2>REGISTRACIJA Į KONFERENCIJĄ</h2>
               <h2>200€</h2>
