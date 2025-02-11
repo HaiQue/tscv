@@ -8,11 +8,20 @@
   margin-bottom: 80px;
 }
 
+@media (max-width: 1024px) {
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+}
+
 .btn {
-  padding: 16px 80px;
+  padding: 14px 60px;
   border: none;
   border-radius: 14px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -28,10 +37,10 @@
 .btn-primary {
   background: linear-gradient(to right, #ff6500, #ffdab3);
   color: rgb(9, 1, 95);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 
 .btn-primary:hover {

@@ -8,6 +8,12 @@
   min-height: 400px;
 }
 
+@media (max-width: 768px) {
+  .speaker-container {
+    gap: 1rem;
+  }
+}
+
 .speaker-container.light {
   background-color: #ffffff;
   color: #000000;

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 
 function App() {
-  return (
-    <Home />
-  );
+  const [isLoading, setIsLoading] = useState(false);
+
+  return <Home />;
 }
 
 export default App;

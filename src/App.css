@@ -34,3 +34,17 @@ button {
 .roboto-black {
   font-weight: 900;
 }
+
+/* Add these rules to prevent horizontal scroll */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}

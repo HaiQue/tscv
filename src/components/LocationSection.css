@@ -1,0 +1,71 @@
+/* Create new file for LocationSection styles */
+.section.text3 {
+  text-align: left;
+}
+
+.conference-container-mg {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.text-column-md {
+  width: 40%;
+}
+
+.text-column-md h2,
+.text-column-md h4 {
+  margin: 0;
+  color: rgb(9, 1, 95);
+  text-align: left;
+}
+
+.image-column {
+  width: 60%;
+}
+
+.cyber-image {
+  width: 100%;
+  height: auto;
+  max-width: 650px;
+}
+
+@media (max-width: 1024px) {
+  .conference-container-mg {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section.text3 {
+    text-align: center;
+  }
+
+  .conference-container-mg {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text-column-md,
+  .image-column {
+    width: 100%;
+    text-align: center;
+  }
+
+  .text-column-md h2,
+  .text-column-md h4 {
+    text-align: center;
+  }
+
+  .cyber-image {
+    max-width: 450px;
+  }
+
+  iframe {
+    height: 300px;
+  }
+}

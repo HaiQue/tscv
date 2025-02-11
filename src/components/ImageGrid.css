@@ -1,42 +1,52 @@
 .carousel {
   width: 100%;
-  margin: 0px auto;
+  margin: 0 auto;
+  padding: 0 20px; /* Add padding to the container */
 }
 
 .carousel-track-container {
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to show all items */
   width: 100%;
 }
 
 .carousel-track {
   display: flex;
-  gap: 2px;
-  transition: transform 0.5s ease-in-out;
+  gap: 20px; /* Increased gap between items */
+  justify-content: center; /* Center items when fewer than max */
+  flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+  margin-right: 40px;
 }
 
 .carousel-slide {
   flex: 0 0 auto;
-  height: 480px; /* fixed height for images */
+  height: 480px;
+  transition: all 0.3s ease;
 }
 
 /* Large screens: 6 images per row */
 @media (min-width: 1400px) {
   .carousel-slide {
-    width: calc((100% - 10px) / 6);
+    width: calc((100% - 100px) / 6); /* Adjusted for new gap */
   }
 }
 
 /* Medium screens: 3 images per row */
 @media (max-width: 1399px) and (min-width: 800px) {
   .carousel-slide {
-    width: calc((100% - 4px) / 3);
+    width: calc((100% - 40px) / 3); /* Adjusted for new gap */
   }
 }
 
 /* Small screens: 1 image per row */
 @media (max-width: 799px) {
   .carousel-slide {
-    width: 100%;
+    width: 80%; /* Reduced width for single image */
+    margin: 0 auto; /* Center the image */
+    height: 400px; /* Reduced height for better mobile view */
+  }
+
+  .carousel-track {
+    gap: 40px; /* Increased gap for mobile view */
   }
 }
 
@@ -44,6 +54,8 @@
   position: relative;
   height: 100%;
   overflow: hidden;
+  border-radius: 8px; /* Added rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
 }
 
 .image-container {
@@ -55,19 +67,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.participant-card:hover .participant-image {
+  transform: scale(1.05); /* Added hover effect */
 }
 
 .participant-name {
   position: absolute;
-  bottom: 0;
+  bottom: 20px; /* Moved up slightly */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7); /* Darker background */
   color: #fff;
-  padding: 6px 12px;
-  font-size: 14px;
+  padding: 8px 16px; /* Increased padding */
+  font-size: 16px; /* Increased font size */
   font-weight: bold;
   border-radius: 5px;
+  white-space: nowrap;
 }
 
 /*

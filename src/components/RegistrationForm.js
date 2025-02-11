@@ -53,7 +53,9 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
         <div className="form-grid">
           <div className="form-section">
             <div className="form-group">
-              <label>Vardas *</label>
+              <label>
+                Vardas <span className="red">*</span>
+              </label>
               <input
                 type="text"
                 name="vardas"
@@ -63,7 +65,9 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               />
             </div>
             <div className="form-group">
-              <label>Pavardė *</label>
+              <label>
+                Pavardė <span className="red">*</span>
+              </label>
               <input
                 type="text"
                 name="pavarde"
@@ -73,7 +77,9 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               />
             </div>
             <div className="form-group">
-              <label>Pareigos *</label>
+              <label>
+                Pareigos <span className="red">*</span>
+              </label>
               <input
                 type="text"
                 name="pareigos"
@@ -83,7 +89,9 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               />
             </div>
             <div className="form-group">
-              <label>Darbovietė *</label>
+              <label>
+                Darbovietė <span className="red">*</span>
+              </label>
               <input
                 type="text"
                 name="darboviete"
@@ -93,7 +101,9 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               />
             </div>
             <div className="form-group">
-              <label>El. paštas *</label>
+              <label>
+                El. paštas <span className="red">*</span>
+              </label>
               <input
                 type="email"
                 name="email"
@@ -114,7 +124,7 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
           </div>
 
           <div className="form-section">
-            <h3>Jūsų užsakymas</h3>
+            <h3 className="order-info">Jūsų užsakymas</h3>
             <div className="tickets-list">
               {tickets.map(
                 (ticket, index) =>

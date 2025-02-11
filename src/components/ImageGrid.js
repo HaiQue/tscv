@@ -7,6 +7,7 @@ const participants = [
   { name: "Johan Norberg", image: photo1 },
   { name: "David McWilliams", image: photo2 },
   { name: "Erin Meyer", image: photo1 },
+  // Uncomment to test with fewer participants
   { name: "Manfred Kets de Vries", image: photo2 },
   { name: "Amy Gallo", image: photo1 },
   { name: "Hal Gregersen", image: photo2 },

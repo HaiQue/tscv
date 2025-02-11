@@ -1,0 +1,25 @@
+/* Create new file for Register styles */
+.conference-container-mg-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.text-column-mg {
+  margin-right: 200px;
+}
+
+@media (max-width: 768px) {
+  .conference-container-mg-small {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .text-column-mg {
+    margin-right: 0;
+    text-align: center;
+  }
+}
