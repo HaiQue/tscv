@@ -3,12 +3,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   margin-bottom: 40px;
+  padding: 0 20px;
 }
 
 .text-column-mg {
   margin-right: 200px;
+  text-align: left;
+}
+
+.register-title,
+.register-price {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.register-button {
+  min-width: 200px;
 }
 
 @media (max-width: 768px) {
@@ -16,10 +28,37 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    text-align: center;
   }
 
   .text-column-mg {
     margin-right: 0;
     text-align: center;
+  }
+
+  .register-title {
+    font-size: 1.8rem; /* Smaller font size on mobile */
+    margin-bottom: 10px;
+  }
+
+  .register-price {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .register-button {
+    width: 100%;
+    max-width: 300px; /* Limit button width on mobile */
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .register-title {
+    font-size: 1.5rem;
+  }
+
+  .register-price {
+    font-size: 1.8rem;
   }
 }

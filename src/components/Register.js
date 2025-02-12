@@ -4,6 +4,7 @@ import RegistrationModal from "./RegistrationModal";
 import RegistrationForm from "./RegistrationForm";
 
 import Button from "./Button";
+import "./Register.css";
 
 const Register = () => {
   const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
@@ -18,34 +19,33 @@ const Register = () => {
 
   return (
     <div id="text2" className="section text2">
-      <div className="organizer-container">
-        <div className="conference-container-mg-small">
-          <div className="text-column-mg">
-            <h2>REGISTRACIJA Į KONFERENCIJĄ</h2>
-            <h2>100€</h2>
-          </div>
-          <Button
-            label="REGISTRUOTIS"
-            variant="secondary"
-            onClick={() => setIsTicketModalOpen(true)}
-          />
-
-          <RegistrationModal
-            isOpen={isTicketModalOpen}
-            onClose={() => setIsTicketModalOpen(false)}
-            onContinue={handleTicketSelection}
-          />
-
-          {ticketData && (
-            <RegistrationForm
-              isOpen={isRegistrationFormOpen}
-              onClose={() => setIsRegistrationFormOpen(false)}
-              ticketCount={ticketData.ticketCount}
-              totalPrice={ticketData.totalPrice}
-            />
-          )}
+      <div className="conference-container-mg-small">
+        <div className="text-column-mg">
+          <h2 className="register-title">REGISTRACIJA Į KONFERENCIJĄ</h2>
+          <h2 className="register-price">100€</h2>
         </div>
+        <Button
+          label="REGISTRUOTIS"
+          variant="secondary"
+          onClick={() => setIsTicketModalOpen(true)}
+          className="register-button"
+        />
       </div>
+
+      <RegistrationModal
+        isOpen={isTicketModalOpen}
+        onClose={() => setIsTicketModalOpen(false)}
+        onContinue={handleTicketSelection}
+      />
+
+      {ticketData && (
+        <RegistrationForm
+          isOpen={isRegistrationFormOpen}
+          onClose={() => setIsRegistrationFormOpen(false)}
+          ticketCount={ticketData.ticketCount}
+          totalPrice={ticketData.totalPrice}
+        />
+      )}
     </div>
   );
 };

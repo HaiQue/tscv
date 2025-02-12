@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./RegistrationForm.css";
+import { Link } from "react-router-dom";
 
 const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
   const [tickets, setTickets] = useState(
@@ -16,6 +17,8 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
     darboviete: "",
     email: "",
     phone: "",
+    vertimasPriemone: false,
+    privacyPolicy: false,
   });
 
   if (!isOpen) return null;
@@ -38,6 +41,14 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: checked,
     }));
   };
 
@@ -121,6 +132,37 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
                 onChange={handleInputChange}
               />
             </div>
+            <div className="form-group checkbox-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="vertimasPriemone"
+                  checked={formData.vertimasPriemone}
+                  onChange={handleCheckboxChange}
+                />
+                Vertimo priemonė
+              </label>
+            </div>
+            <div className="form-group checkbox-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="privacyPolicy"
+                  checked={formData.privacyPolicy}
+                  onChange={handleCheckboxChange}
+                  required
+                />
+                Sutinku su{" "}
+                <Link
+                  to="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privatumo ir slapukų politika
+                </Link>{" "}
+                <span className="red">*</span>
+              </label>
+            </div>
           </div>
 
           <div className="form-section">
@@ -153,7 +195,11 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
         </div>
 
         <div className="form-footer">
-          <button type="submit" className="submit-button">
+          <button
+            type="submit"
+            className="submit-button"
+            disabled={!formData.privacyPolicy}
+          >
             Tęsti
           </button>
         </div>

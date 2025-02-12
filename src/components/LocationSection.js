@@ -19,6 +19,7 @@ function LocationSection() {
       <div className="conference-container-mg">
         <div className="text-column-md">
           <h2>KONFERENCIJOS VIETA</h2>
+          <br />
           <h4>CYBERCITY (ŠVITRIGAILOS G. 36, VILNIUS)</h4>
           <br />
           <Button

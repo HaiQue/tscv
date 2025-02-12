@@ -26,12 +26,14 @@
 
 .image-column {
   width: 60%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .cyber-image {
   width: 100%;
   height: auto;
-  max-width: 650px;
+  max-width: 550px;
 }
 
 @media (max-width: 1024px) {
@@ -61,8 +63,14 @@
     text-align: center;
   }
 
+  .image-column {
+    justify-content: center;
+    align-items: center;
+  }
+
   .cyber-image {
     max-width: 450px;
+    margin: 0 auto;
   }
 
   iframe {

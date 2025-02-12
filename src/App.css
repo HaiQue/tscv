@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Archivo", serif;
   font-weight: 400;
   background-color: #a1999930;
   margin: 0;
@@ -11,27 +11,27 @@ button {
   font-family: "Roboto", sans-serif;
 }
 
-.roboto-thin {
+.archivo-thin {
   font-weight: 100;
 }
 
-.roboto-light {
+.archivo-light {
   font-weight: 300;
 }
 
-.roboto-regular {
+.archivo-regular {
   font-weight: 400;
 }
 
-.roboto-medium {
+.archivo-medium {
   font-weight: 500;
 }
 
-.roboto-bold {
+.archivo-bold {
   font-weight: 700;
 }
 
-.roboto-black {
+.archivo-black {
   font-weight: 900;
 }
 

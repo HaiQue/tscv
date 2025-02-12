@@ -29,7 +29,7 @@ function HeroSection() {
             <Button label="CYBERCITY" variant="primary" />
           </div>
           <div className="organizer-container">
-            <div className="conference-container">
+            <div className="organizer-container-right">
               {/* Left: Text Section */}
               <div className="text-column">
                 <h4>KONFERENCIJOS</h4>

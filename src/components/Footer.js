@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import { ReactComponent as Logo } from "../imgs/Logo_cropped.svg"; // Import SVG as a React component
 
@@ -42,7 +43,15 @@ const Footer = () => {
           <p>
             Dalyvio keitimo, dalyvavimo atšaukimo ir pinigų grąžinimo taisyklės
           </p>
-          <p>Privatumas ir slapukų politika</p>
+          <p>
+            <Link
+              to="/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privatumas ir slapukų politika
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
