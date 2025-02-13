@@ -14,13 +14,12 @@ function HeroSection() {
         {/* Left Text Section */}
         <div className="text-section">
           <h1>
-            TRANSFUSION SAFETY
+            SAUGUS KRAUJAS
             <br />
-            CONFERENCE
-            <br />
-            VILNIUS <span className="orange">2025</span>
+            NKC
+            <span className="orange"> 2025</span>
           </h1>
-          <h2 className="orange">BLOOD COMPONENTS MANAGEMENT</h2>
+          <h2 className="orange">Racionalus kraujo naudojimas</h2>
         </div>
         {/* Right Button + Logo Section */}
         <div className="right-section">

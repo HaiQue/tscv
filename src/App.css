@@ -48,3 +48,17 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+
+/* Add a new wrapper div for the background */
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background-image: url("./imgs/TransfusionSafetyForum.svg");
+  background-repeat: repeat-y;
+  background-size: 40px auto;
+  z-index: 1;
+  pointer-events: none;
+}

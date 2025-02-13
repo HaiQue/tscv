@@ -1,5 +1,5 @@
 import SpeakerProfile from "./SpeakerProfile";
-import photo1 from "../imgs/edited_photo_1.jpg";
+import photo1 from "../imgs/edited_photo_1.png";
 import photo2 from "../imgs/edited_photo_2.png";
 
 function RenderSpeakers() {

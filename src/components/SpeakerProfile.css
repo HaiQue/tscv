@@ -6,6 +6,8 @@
   padding: 2rem;
   /* margin: 2rem 0; */
   min-height: 400px;
+  position: relative;
+  z-index: 0;
 }
 
 @media (max-width: 768px) {
@@ -14,18 +16,25 @@
   }
 }
 
-.speaker-container.light {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.speaker-container.dark h2.name {
-  color: #ffffff;
+.speaker-container.light,
+.speaker-container.dark {
+  background: linear-gradient(
+    to right,
+    rgba(255, 214, 179, 1),
+    rgba(255, 204, 163, 1) 20%,
+    rgba(255, 230, 204, 1) 80%,
+    rgba(255, 242, 230, 1) 100%
+  );
 }
 
 .speaker-container.dark {
-  background-color: #000000;
-  color: #ffffff;
+  background: linear-gradient(
+    to right,
+    rgba(229, 89, 61, 1),
+    rgba(229, 89, 61, 1) 20%,
+    rgba(255, 171, 112, 1) 80%,
+    rgba(255, 171, 112, 1) 100%
+  );
 }
 
 .speaker-container.reverse {
@@ -39,7 +48,7 @@
 }
 
 .category {
-  color: #ff0000;
+  /* color: rgb(9, 1, 95); */
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 500;
@@ -59,9 +68,8 @@
   margin-bottom: 2rem;
 }
 
+/* Remove or comment out the old .learn-more styles */
 .learn-more {
-  background-color: #ff0000;
-  color: white;
   border: none;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
@@ -69,8 +77,23 @@
   transition: background-color 0.3s ease;
 }
 
-.learn-more:hover {
-  background-color: #d40000;
+/* Add these new theme-specific button styles */
+.light .learn-more {
+  background-color: rgb(9, 1, 95);
+  color: #faf5f0;
+}
+
+.light .learn-more:hover {
+  background-color: rgba(9, 1, 95, 0.8);
+}
+
+.dark .learn-more {
+  background-color: #db4524;
+  color: #faf5f0;
+}
+
+.dark .learn-more:hover {
+  background-color: #c62b08;
 }
 
 .speaker-image {

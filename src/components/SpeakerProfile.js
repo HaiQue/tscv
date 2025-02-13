@@ -20,7 +20,7 @@ const SpeakerProfile = ({
         <span className="category">{category}</span>
         <h2 className="name">{name}</h2>
         <p className="description">{description}</p>
-        <button className="learn-more">{buttonText}</button>
+        {/* <button className="learn-more">{buttonText}</button> */}
       </div>
       <div className="speaker-image">
         <img src={imageUrl} alt={name} />

@@ -8,12 +8,15 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      </Routes>
-    </Router>
+    <>
+      <div className="background-wrapper" />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

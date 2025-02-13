@@ -11,11 +11,10 @@ const Footer = () => {
         <div className="logo-section">
           <Logo className="footer-logo" />
           <div className="logo-text">
-            <span>Transfusion</span>
-            <span>Safety</span>
-            <span>Conference</span>
-            <span>Vilnius</span>
-            <span>2024</span>
+            <span>Saugus</span>
+            <span>Kraujas</span>
+            <span>NKC</span>
+            <span>2025</span>
           </div>
         </div>
 
