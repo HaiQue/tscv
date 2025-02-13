@@ -52,9 +52,48 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
     }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Prepare email data
+    const emailData = {
+      userEmail: formData.email,
+      adminEmail: "your-admin-email@gmail.com", // Replace with your admin email
+      subject: "TRANSFUSION SAFETY CONFERENCE VILNIUS 2025 Registration",
+      userData: {
+        ...formData,
+        tickets: activeTickets,
+        totalAmount: currentTotal,
+      },
+    };
+
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(emailData),
+        }
+      );
+
+      if (response.ok) {
+        alert("Registration successful! Check your email for confirmation.");
+        onClose();
+      } else {
+        throw new Error("Failed to send registration");
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Registration failed. Please try again.");
+    }
+  };
+
   return (
     <div className="modal-overlay">
-      <div className="modal-content">
+      <form onSubmit={handleSubmit} className="modal-content">
         <button className="close-button" onClick={onClose}>
           ×
         </button>
@@ -200,10 +239,10 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
             className="submit-button"
             disabled={!formData.privacyPolicy}
           >
-            Tęsti
+            Registruotis
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
