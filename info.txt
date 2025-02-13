@@ -49,3 +49,6 @@ geguzes 13d mygtukai islygiuoti.
 juosta prideti.
 
 linkai is nuorauku i apie juos.
+
+Vietoj testi - Registruotis.
+Jusu registracija sekminga.
