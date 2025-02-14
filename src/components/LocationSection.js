@@ -22,12 +22,15 @@ function LocationSection() {
           <br />
           <h4>CYBERCITY (ŠVITRIGAILOS G. 34, B KORPUSAS, VILNIUS)</h4>
           <br />
-          <Button
-            label="LOKACIJA ŽEMĖLAPYJE"
-            variant="secondary"
-            onClick={handleShowMap}
-          />
+          <div className="button-container">
+            <Button
+              label="LOKACIJA ŽEMĖLAPYJE"
+              variant="secondary"
+              onClick={handleShowMap}
+            />
+          </div>
         </div>
+
         <div className="image-column">
           <img src={Cybercity} alt="Cybercity" className="cyber-image" />
         </div>

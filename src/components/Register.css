@@ -13,6 +13,12 @@
   text-align: left;
 }
 
+@media (max-width: 1350px) {
+  .text-column-mg {
+    margin-right: 0px;
+  }
+}
+
 .register-title,
 .register-price {
   margin: 10px 0;

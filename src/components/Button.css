@@ -8,21 +8,52 @@
   margin-bottom: 80px;
 }
 
-@media (max-width: 1024px) {
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
+.button-group-horizontal {
+  display: flex;
+  gap: 20px;
 }
 
+/* Make buttons consistent width */
 .btn {
   padding: 14px 60px;
   border: none;
   border-radius: 14px;
   font-size: 16px;
   cursor: pointer;
+  max-height: 55px;
+  width: 280px; /* Set fixed width for all buttons */
+}
+
+@media (max-width: 1300px) {
+  .button-group-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 80%; /* Container width */
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .button-group,
+  .button-group-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 80%; /* Container width */
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%; /* Make buttons full width of their container */
+    max-width: none;
+  }
 }
 
 .btn:hover {
@@ -56,7 +87,7 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 16px 80px;
+  padding: 16px 45px;
 }
 
 .btn-secondary:hover {

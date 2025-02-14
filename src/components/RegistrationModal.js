@@ -19,7 +19,7 @@ const RegistrationModal = ({ isOpen, onClose, onContinue }) => {
         </button>
 
         <div className="modal-header">
-          <h2>TRANSFUSION SAFETY CONFERENCE VILNIUS 2025</h2>
+          <h2>SAUGUS KRAUJAS NKC 2025</h2>
           <h3>CYBERCITY</h3>
         </div>
 
@@ -48,10 +48,3 @@ const RegistrationModal = ({ isOpen, onClose, onContinue }) => {
 };
 
 export default RegistrationModal;
-
-{
-  /* 
-    <h2>TRANSFUSION SAFETY CONFERENCE VILNIUS 2025</h2>
-<h3>CYBERCITY</h3> 
-*/
-}

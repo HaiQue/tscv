@@ -96,6 +96,7 @@ h4 {
 
 @media (max-width: 768px) {
   .footer-content {
+    display: block;
     flex-direction: column;
     padding: 20px;
   }

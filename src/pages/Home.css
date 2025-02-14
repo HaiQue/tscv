@@ -101,6 +101,9 @@ h6 {
 /* Button Adjustments */
 .button-group {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .button-group-horizontal {
@@ -239,13 +242,13 @@ h6 {
   }
 
   .text-section {
-    max-width: 100%;
+    max-width: 90%;
     margin-left: 0;
     text-align: center;
   }
 
   .right-section {
-    width: 100%;
+    width: 80%;
     align-items: center;
   }
 
@@ -259,13 +262,20 @@ h6 {
 
   .button-group {
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 40px;
+    width: 80%;
+    margin: 20px auto;
   }
 
   .button-group-horizontal {
     flex-direction: column;
     width: 100%;
+    margin: 0 auto;
+  }
+
+  .button-group button,
+  .button-group-horizontal button {
+    width: 100%;
+    margin: 5px 0;
   }
 
   .conference-container {

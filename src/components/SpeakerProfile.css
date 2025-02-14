@@ -27,6 +27,10 @@
   );
 }
 
+.speaker-container.light {
+  color: rgb(9, 1, 95);
+}
+
 .speaker-container.dark {
   background: linear-gradient(
     to right,
@@ -35,6 +39,10 @@
     rgba(255, 171, 112, 1) 80%,
     rgba(255, 171, 112, 1) 100%
   );
+  color: #faf5f0;
+  h2 {
+    color: #faf5f0;
+  }
 }
 
 .speaker-container.reverse {

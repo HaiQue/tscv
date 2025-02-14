@@ -211,7 +211,7 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
                 (ticket, index) =>
                   ticket.isActive && (
                     <div key={index} className="ticket-item">
-                      <span>TRANSFUSION SAFETY CONFERENCE VILNIUS 2025</span>
+                      <span>SAUGUS KRAUJAS NKC 2025 </span>
                       <span>{ticket.price} €</span>
                       <button
                         className="remove-ticket"
