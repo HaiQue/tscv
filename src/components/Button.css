@@ -10,18 +10,26 @@
 
 .button-group-horizontal {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Make buttons consistent width */
+/* Base button styles */
 .btn {
-  padding: 14px 60px;
+  width: 100%;
+  max-width: 400px; /* Reduced from 475px */
+  padding: 12px 25px; /* Slightly reduced padding */
   border: none;
-  border-radius: 14px;
+  border-radius: 8px; /* Back to original, less rounded corners */
   font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
   cursor: pointer;
-  max-height: 55px;
-  width: 280px; /* Set fixed width for all buttons */
+  transition: all 0.3s ease;
+  display: block;
+  margin: 8px auto; /* Reduced margin */
 }
 
 @media (max-width: 1300px) {
@@ -68,32 +76,20 @@
 .btn-primary {
   background: linear-gradient(to right, #ff6500, #ffdab3);
   color: rgb(9, 1, 95);
-  font-size: 16px;
-  font-weight: 900;
-  text-transform: uppercase;
-  /* letter-spacing: 1px; */
 }
 
 .btn-primary:hover {
   background: linear-gradient(to right, #ff4800, #ffedb3);
   color: rgb(9, 1, 95);
-  font-weight: 900;
 }
 
 .btn-secondary {
   background: linear-gradient(to right, #ff6500, #ffdab3);
   color: rgb(9, 1, 95);
-  font-size: 16px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 16px 45px;
 }
 
 .btn-secondary:hover {
   background: linear-gradient(to right, #ff4800, #ffedb3);
-  color: rgb(9, 1, 95);
-  font-weight: 900;
 }
 
 .btn:disabled {
@@ -101,4 +97,54 @@
   cursor: not-allowed;
   transform: none;
   color: #666666;
+}
+
+/* Ensure registration button matches */
+.submit-button {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ff6500, #ffdab3);
+  color: rgb(9, 1, 95);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 8px auto;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #ff4800, #ffedb3);
+}
+
+.submit-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  color: #666666;
+}
+
+/* Update the location button style */
+.location-button {
+  width: 180px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  background: linear-gradient(to right, #ff6500, #ffdab3);
+  color: rgb(9, 1, 95);
+  white-space: nowrap;
+}
+
+.location-button:hover {
+  background: linear-gradient(to right, #ff4800, #ffedb3);
 }

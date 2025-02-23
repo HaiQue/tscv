@@ -21,20 +21,51 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
     privacyPolicy: false,
   });
 
-  if (!isOpen) return null;
+  const [errors, setErrors] = useState({
+    vardas: false,
+    pavarde: false,
+    pareigos: false,
+    darboviete: false,
+    email: false,
+    privacyPolicy: false,
+  });
 
-  const removeTicket = (index) => {
-    const newTickets = [...tickets];
-    newTickets[index].isActive = false;
-    setTickets(newTickets);
+  const [touched, setTouched] = useState({
+    vardas: false,
+    pavarde: false,
+    pareigos: false,
+    darboviete: false,
+    email: false,
+    privacyPolicy: false,
+  });
+
+  const validateField = (name, value) => {
+    switch (name) {
+      case "email":
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      case "vardas":
+      case "pavarde":
+      case "pareigos":
+      case "darboviete":
+        return value.trim().length > 0;
+      case "privacyPolicy":
+        return value === true;
+      default:
+        return true;
+    }
   };
 
-  const addTicket = () => {
-    setTickets([...tickets, { price: 100, isActive: true }]);
-  };
+  const handleBlur = (name) => {
+    setTouched((prev) => ({
+      ...prev,
+      [name]: true,
+    }));
 
-  const activeTickets = tickets.filter((ticket) => ticket.isActive);
-  const currentTotal = activeTickets.length * 100;
+    setErrors((prev) => ({
+      ...prev,
+      [name]: !validateField(name, formData[name]),
+    }));
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +73,13 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
       ...prev,
       [name]: value,
     }));
+
+    if (touched[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: !validateField(name, value),
+      }));
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -50,16 +88,51 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
       ...prev,
       [name]: checked,
     }));
+
+    if (name === "privacyPolicy") {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: !checked,
+      }));
+      setTouched((prev) => ({
+        ...prev,
+        [name]: true,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Prepare email data
+    // Validate all fields
+    const newErrors = {};
+    Object.keys(formData).forEach((key) => {
+      if (errors.hasOwnProperty(key)) {
+        newErrors[key] = !validateField(key, formData[key]);
+      }
+    });
+
+    setErrors(newErrors);
+    setTouched(
+      Object.keys(touched).reduce(
+        (acc, key) => ({
+          ...acc,
+          [key]: true,
+        }),
+        {}
+      )
+    );
+
+    // Check if there are any errors
+    if (Object.values(newErrors).some((error) => error)) {
+      alert("Prašome užpildyti visus būtinus laukus.");
+      return;
+    }
+
     const emailData = {
       userEmail: formData.email,
-      adminEmail: "your-admin-email@gmail.com", // Replace with your admin email
-      subject: "TRANSFUSION SAFETY CONFERENCE VILNIUS 2025 Registration",
+      adminEmail: "konferencija@kraujodonoryste.lt",
+      subject: "SAUGUS KRAUJAS NKC 2025 Registracija",
       userData: {
         ...formData,
         tickets: activeTickets,
@@ -79,22 +152,64 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
         }
       );
 
-      if (response.ok) {
-        alert("Registration successful! Check your email for confirmation.");
-        onClose();
-      } else {
-        throw new Error("Failed to send registration");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Nepavyko išsiųsti registracijos");
       }
+
+      alert("Registracija sėkminga! Patikrinkite savo el. paštą.");
+      onClose();
     } catch (error) {
       console.error("Registration error:", error);
-      alert("Registration failed. Please try again.");
+      alert(`Registracija nepavyko. Klaida: ${error.message}`);
     }
+  };
+
+  const handleTicketChange = (index, action, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const newTickets = [...tickets];
+    if (action === "remove") {
+      newTickets[index].isActive = false;
+    } else if (action === "add") {
+      newTickets.push({ price: 100, isActive: true });
+    }
+    setTickets(newTickets);
+  };
+
+  const activeTickets = tickets.filter((ticket) => ticket.isActive);
+  const currentTotal = activeTickets.length * 100;
+
+  if (!isOpen) return null;
+
+  const getInputClassName = (fieldName) => {
+    return `form-input ${
+      touched[fieldName] && errors[fieldName] ? "error" : ""
+    }`;
+  };
+
+  // Add this function to check if form is valid
+  const isFormValid = () => {
+    // Check if all required fields are filled and valid
+    const requiredFields = [
+      "vardas",
+      "pavarde",
+      "pareigos",
+      "darboviete",
+      "email",
+    ];
+    const hasEmptyFields = requiredFields.some((field) => !formData[field]);
+    const hasErrors = Object.values(errors).some((error) => error);
+    const privacyAccepted = formData.privacyPolicy;
+
+    return !hasEmptyFields && !hasErrors && privacyAccepted;
   };
 
   return (
     <div className="modal-overlay">
       <form onSubmit={handleSubmit} className="modal-content">
-        <button className="close-button" onClick={onClose}>
+        <button className="close-button" onClick={onClose} type="button">
           ×
         </button>
 
@@ -109,11 +224,17 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               <input
                 type="text"
                 name="vardas"
-                required
+                className={getInputClassName("vardas")}
                 value={formData.vardas}
                 onChange={handleInputChange}
+                onBlur={() => handleBlur("vardas")}
+                required
               />
+              {touched.vardas && errors.vardas && (
+                <span className="error-message">Šis laukas yra privalomas</span>
+              )}
             </div>
+
             <div className="form-group">
               <label>
                 Pavardė <span className="red">*</span>
@@ -121,11 +242,17 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               <input
                 type="text"
                 name="pavarde"
-                required
+                className={getInputClassName("pavarde")}
                 value={formData.pavarde}
                 onChange={handleInputChange}
+                onBlur={() => handleBlur("pavarde")}
+                required
               />
+              {touched.pavarde && errors.pavarde && (
+                <span className="error-message">Šis laukas yra privalomas</span>
+              )}
             </div>
+
             <div className="form-group">
               <label>
                 Pareigos <span className="red">*</span>
@@ -133,11 +260,17 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               <input
                 type="text"
                 name="pareigos"
-                required
+                className={getInputClassName("pareigos")}
                 value={formData.pareigos}
                 onChange={handleInputChange}
+                onBlur={() => handleBlur("pareigos")}
+                required
               />
+              {touched.pareigos && errors.pareigos && (
+                <span className="error-message">Šis laukas yra privalomas</span>
+              )}
             </div>
+
             <div className="form-group">
               <label>
                 Darbovietė <span className="red">*</span>
@@ -145,11 +278,17 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               <input
                 type="text"
                 name="darboviete"
-                required
+                className={getInputClassName("darboviete")}
                 value={formData.darboviete}
                 onChange={handleInputChange}
+                onBlur={() => handleBlur("darboviete")}
+                required
               />
+              {touched.darboviete && errors.darboviete && (
+                <span className="error-message">Šis laukas yra privalomas</span>
+              )}
             </div>
+
             <div className="form-group">
               <label>
                 El. paštas <span className="red">*</span>
@@ -157,11 +296,19 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
               <input
                 type="email"
                 name="email"
-                required
+                className={getInputClassName("email")}
                 value={formData.email}
                 onChange={handleInputChange}
+                onBlur={() => handleBlur("email")}
+                required
               />
+              {touched.email && errors.email && (
+                <span className="error-message">
+                  Įveskite teisingą el. pašto adresą
+                </span>
+              )}
             </div>
+
             <div className="form-group">
               <label>Kontaktinis tel. nr.</label>
               <input
@@ -171,36 +318,50 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
                 onChange={handleInputChange}
               />
             </div>
+
             <div className="form-group checkbox-group">
-              <label>
+              <label className="checkbox-label">
+                <span>Vertimo priemonė</span>
                 <input
                   type="checkbox"
                   name="vertimasPriemone"
                   checked={formData.vertimasPriemone}
                   onChange={handleCheckboxChange}
                 />
-                Vertimo priemonė
               </label>
             </div>
+
             <div className="form-group checkbox-group">
-              <label>
+              <label
+                className={`checkbox-label ${
+                  touched.privacyPolicy && errors.privacyPolicy ? "error" : ""
+                }`}
+              >
+                <span>
+                  Sutinku su{" "}
+                  <Link
+                    to="/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Privatumo ir slapukų politika
+                  </Link>{" "}
+                  <span className="red">*</span>
+                </span>
                 <input
                   type="checkbox"
                   name="privacyPolicy"
                   checked={formData.privacyPolicy}
                   onChange={handleCheckboxChange}
+                  onBlur={() => handleBlur("privacyPolicy")}
                   required
                 />
-                Sutinku su{" "}
-                <Link
-                  to="/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Privatumo ir slapukų politika
-                </Link>{" "}
-                <span className="red">*</span>
               </label>
+              {touched.privacyPolicy && errors.privacyPolicy && (
+                <span className="error-message">
+                  Privalote sutikti su privatumo politika
+                </span>
+              )}
             </div>
           </div>
 
@@ -214,15 +375,20 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
                       <span>SAUGUS KRAUJAS NKC 2025 </span>
                       <span>{ticket.price} €</span>
                       <button
+                        type="button"
                         className="remove-ticket"
-                        onClick={() => removeTicket(index)}
+                        onClick={(e) => handleTicketChange(index, "remove", e)}
                       >
                         ×
                       </button>
                     </div>
                   )
               )}
-              <button className="add-ticket" onClick={addTicket}>
+              <button
+                type="button"
+                className="add-ticket"
+                onClick={(e) => handleTicketChange(null, "add", e)}
+              >
                 + Pridėti bilietą
               </button>
             </div>
@@ -237,7 +403,7 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
           <button
             type="submit"
             className="submit-button"
-            disabled={!formData.privacyPolicy}
+            disabled={!isFormValid()}
           >
             Registruotis
           </button>

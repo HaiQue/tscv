@@ -67,12 +67,10 @@ h6 {
 }
 
 .right-section {
-  margin-right: 25px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   gap: 20px;
-  width: 40%;
+  width: 50%;
   max-width: 100%;
 }
 
@@ -81,10 +79,11 @@ h6 {
   line-height: 1.4;
   color: rgb(9, 1, 95);
   text-transform: uppercase;
+  text-align: center;
 }
 
 .text-section {
-  max-width: 60%;
+  max-width: 50%;
   margin-left: 30px;
 }
 
@@ -108,18 +107,24 @@ h6 {
 
 .button-group-horizontal {
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  width: 100%;
+  justify-content: center;
 }
 
-.button-group-horizontal .button {
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 12px 24px;
+.button-group-horizontal .btn {
+  width: 240px;
+  padding: 10px 20px;
+  white-space: nowrap;
+  font-size: 15px;
+  min-width: fit-content;
+  margin: 0;
 }
 
 .organizer-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .organizer-container-right {
@@ -127,6 +132,7 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 25px;
+  margin-top: 20px;
 }
 
 .conference-container {
@@ -154,15 +160,8 @@ h6 {
 .text-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-}
-
-.text-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
+  align-items: center;
+  text-align: center;
 }
 
 .text-column-mg {
@@ -210,6 +209,7 @@ h6 {
   margin-top: 30px;
 }
 
+/* Media queries for different screen sizes */
 @media (max-width: 1024px) {
   .main-section {
     flex-direction: column;
@@ -228,11 +228,18 @@ h6 {
   }
 
   .button-group-horizontal {
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .button-group-horizontal .btn {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 
-/* Mobile Responsiveness for Hero Section */
 @media (max-width: 768px) {
   .main-section {
     flex-direction: column;
@@ -267,15 +274,14 @@ h6 {
   }
 
   .button-group-horizontal {
-    flex-direction: column;
     width: 100%;
-    margin: 0 auto;
+    gap: 10px;
   }
 
-  .button-group button,
-  .button-group-horizontal button {
-    width: 100%;
-    margin: 5px 0;
+  .button-group-horizontal .btn {
+    width: 90%;
+    font-size: 14px;
+    padding: 8px 15px;
   }
 
   .conference-container {

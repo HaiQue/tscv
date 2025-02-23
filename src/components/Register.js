@@ -17,6 +17,11 @@ const Register = () => {
     setIsRegistrationFormOpen(true);
   };
 
+  const handleRegistrationClose = () => {
+    setIsRegistrationFormOpen(false);
+    setTicketData(null); // Reset ticket data when form is closed
+  };
+
   return (
     <div id="text2" className="section text2">
       <div className="conference-container-mg-small">
@@ -41,7 +46,7 @@ const Register = () => {
       {ticketData && (
         <RegistrationForm
           isOpen={isRegistrationFormOpen}
-          onClose={() => setIsRegistrationFormOpen(false)}
+          onClose={handleRegistrationClose}
           ticketCount={ticketData.ticketCount}
           totalPrice={ticketData.totalPrice}
         />

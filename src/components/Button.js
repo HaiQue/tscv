@@ -2,7 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Button.css";
 
-function Button({ label, onClick, type = "button", variant = "primary", disabled = false, anchor = null }) {
+function Button({
+  label,
+  onClick,
+  type = "button",
+  variant = "primary",
+  disabled = false,
+  anchor = null,
+}) {
   const handleClick = (event) => {
     if (anchor) {
       const section = document.getElementById(anchor);

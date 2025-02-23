@@ -1,5 +1,6 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
+const { addRegistrationToExcel } = require("../utils/excelHandler");
 const router = express.Router();
 
 // Configure nodemailer with your mail server settings
@@ -27,47 +28,64 @@ transporter.verify(function (error, success) {
 });
 
 router.post("/send-email", async (req, res) => {
-  const { userEmail, adminEmail, subject, userData } = req.body;
-
-  // Create email template for user
-  const userEmailContent = `
-    Dear ${userData.vardas} ${userData.pavarde},
-
-    Thank you for registering for TRANSFUSION SAFETY CONFERENCE VILNIUS 2025!
-
-    Registration Details:
-    - Name: ${userData.vardas} ${userData.pavarde}
-    - Position: ${userData.pareigos}
-    - Workplace: ${userData.darboviete}
-    - Email: ${userData.email}
-    - Phone: ${userData.phone}
-    - Number of tickets: ${userData.tickets.length}
-    - Total amount: ${userData.totalAmount} €
-
-    We look forward to seeing you at the conference!
-  `;
-
-  // Create email template for admin
-  const adminEmailContent = `
-    New Registration:
-    
-    Attendee Details:
-    - Name: ${userData.vardas} ${userData.pavarde}
-    - Position: ${userData.pareigos}
-    - Workplace: ${userData.darboviete}
-    - Email: ${userData.email}
-    - Phone: ${userData.phone}
-    - Translation needed: ${userData.vertimasPriemone ? "Yes" : "No"}
-    - Number of tickets: ${userData.tickets.length}
-    - Total amount: ${userData.totalAmount} €
-  `;
-
   try {
+    console.log("Received email request:", req.body);
+
+    const { userEmail, adminEmail, subject, userData } = req.body;
+
+    if (!userEmail || !adminEmail || !userData) {
+      console.error("Missing required fields");
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    // Save to Excel first
+    const excelSaved = await addRegistrationToExcel(userData);
+    if (!excelSaved) {
+      throw new Error("Failed to save registration data to Excel");
+    }
+
+    // Create email template for user in Lithuanian
+    const userEmailContent = `
+      Gerb. ${userData.vardas} ${userData.pavarde},
+
+      Dėkojame už registraciją į konferenciją SAUGUS KRAUJAS NKC 2025!
+
+      Jūsų registracijos duomenys:
+      - Vardas, pavardė: ${userData.vardas} ${userData.pavarde}
+      - Pareigos: ${userData.pareigos}
+      - Darbovietė: ${userData.darboviete}
+      - El. paštas: ${userData.email}
+      - Tel. numeris: ${userData.phone}
+      - Bilietų skaičius: ${userData.tickets.length}
+      - Bendra suma: ${userData.totalAmount} €
+      ${userData.vertimasPriemone ? "- Vertimo priemonė: Taip" : ""}
+
+      Netrukus su Jumis susisieksime dėl apmokėjimo.
+
+      Pagarbiai,
+      Konferencijos organizatoriai
+    `;
+
+    // Create email template for admin
+    const adminEmailContent = `
+      Nauja registracija į konferenciją:
+      
+      Dalyvio informacija:
+      - Vardas, pavardė: ${userData.vardas} ${userData.pavarde}
+      - Pareigos: ${userData.pareigos}
+      - Darbovietė: ${userData.darboviete}
+      - El. paštas: ${userData.email}
+      - Tel. numeris: ${userData.phone}
+      - Vertimo priemonė: ${userData.vertimasPriemone ? "Taip" : "Ne"}
+      - Bilietų skaičius: ${userData.tickets.length}
+      - Bendra suma: ${userData.totalAmount} €
+    `;
+
     // Send email to user
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: userEmail,
-      subject: subject,
+      subject: "Registracija į konferenciją SAUGUS KRAUJAS NKC 2025",
       text: userEmailContent,
     });
 
@@ -75,14 +93,17 @@ router.post("/send-email", async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: adminEmail,
-      subject: `New Registration: ${subject}`,
+      subject: `Nauja registracija: ${userData.vardas} ${userData.pavarde}`,
       text: adminEmailContent,
     });
 
-    res.status(200).json({ message: "Emails sent successfully" });
+    res.status(200).json({ message: "Registration processed successfully" });
   } catch (error) {
-    console.error("Email sending error:", error);
-    res.status(500).json({ error: "Failed to send emails" });
+    console.error("Processing error:", error);
+    res.status(500).json({
+      error: "Failed to process registration",
+      details: error.message,
+    });
   }
 });
 

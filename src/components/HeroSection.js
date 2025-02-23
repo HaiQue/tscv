@@ -24,8 +24,16 @@ function HeroSection() {
         {/* Right Button + Logo Section */}
         <div className="right-section">
           <div className="button-group-horizontal">
-            <Button label="GEGUŽĖS 13 D" variant="primary" />
-            <Button label="CYBERCITY" variant="primary" />
+            <Button
+              className="location-button"
+              label="GEGUŽĖS 13 D"
+              variant="primary"
+            />
+            <Button
+              className="location-button"
+              label="CYBERCITY"
+              variant="primary"
+            />
           </div>
           <div className="organizer-container">
             <div className="organizer-container-right">
