@@ -1,6 +1,6 @@
 /* Create new file for LocationSection styles */
 .section.text3 {
-  text-align: left;
+  text-align: center;
 }
 
 .conference-container-mg {
@@ -21,7 +21,7 @@
 .text-column-md h4 {
   margin: 0;
   color: rgb(9, 1, 95);
-  text-align: left;
+  text-align: center;
 }
 
 .image-column {

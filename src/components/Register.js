@@ -26,8 +26,12 @@ const Register = () => {
     <div id="text2" className="section text2">
       <div className="conference-container-mg-small">
         <div className="text-column-mg">
-          <h2 className="register-title">REGISTRACIJA Į KONFERENCIJĄ</h2>
-          <h2 className="register-price">100€</h2>
+          <h2 className="register-title">
+            Konferencijos registracijos mokestis 100€
+          </h2>
+          <h4 className="register-price">
+            Bus išduodami 8 val. kvalifikacijos tobulinimo pažymėjimai
+          </h4>
         </div>
         <Button
           label="REGISTRUOTIS"

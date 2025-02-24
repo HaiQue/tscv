@@ -1,21 +1,25 @@
 /* Create new file for Register styles */
 .conference-container-mg-small {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   margin-bottom: 40px;
   padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 0px;
 }
 
 .text-column-mg {
-  margin-right: 200px;
+  margin-right: 20px;
   text-align: left;
 }
 
 @media (max-width: 1350px) {
   .text-column-mg {
-    margin-right: 0px;
+    margin-right: 20px;
   }
 }
 
@@ -23,6 +27,7 @@
 .register-price {
   margin: 10px 0;
   text-align: center;
+  color: rgb(9, 1, 95);
 }
 
 .register-button {
@@ -48,7 +53,7 @@
   }
 
   .register-price {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
