@@ -4,9 +4,12 @@
   padding: 0 20px;
   color: #333;
   line-height: 1.6;
-  font-size: 15px;
 }
 
+p,
+li {
+  font-size: 15px;
+}
 .privacy-content {
   background: #fff;
   padding: 40px;
@@ -19,12 +22,6 @@
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
-}
-
-.privacy-content h2 {
-  color: rgb(9, 1, 95);
-  font-size: 1.5rem;
-  font-weight: 600;
 }
 
 .policy-section {
@@ -45,6 +42,10 @@
 
 .controller-info p {
   margin: 10px 0;
+}
+
+h3 {
+  color: #d5593e;
 }
 
 .attention-note {

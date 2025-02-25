@@ -40,7 +40,10 @@ const Footer = () => {
         {/* Right Side: Policies */}
         <div className="policy-section">
           <p>
-            Dalyvio keitimo, dalyvavimo atšaukimo ir pinigų grąžinimo taisyklės
+            <Link to="/refund-policy" target="_blank" rel="noopener noreferrer">
+              Dalyvio keitimo, dalyvavimo atšaukimo ir pinigų grąžinimo
+              taisyklės
+            </Link>
           </p>
           <p>
             <Link

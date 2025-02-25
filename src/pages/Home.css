@@ -52,6 +52,11 @@ h6 {
   margin-bottom: 40px;
 }
 
+.h4-gap {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
 .orange {
   color: #d5593e;
   font-weight: 900;

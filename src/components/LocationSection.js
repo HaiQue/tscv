@@ -2,9 +2,11 @@ import { useRef, useState } from "react";
 import Button from "./Button";
 import Cybercity from "../imgs/Cybercity.png";
 import "./LocationSection.css";
+// import "../pages/Home.css";
 
 function LocationSection() {
   const [showMap, setShowMap] = useState(false);
+
   const mapRef = useRef(null);
 
   const handleShowMap = () => {
@@ -20,7 +22,9 @@ function LocationSection() {
         <div className="text-column-md">
           <h2>KONFERENCIJOS VIETA</h2>
           <br />
-          <h4>CYBERCITY (ŠVITRIGAILOS G. 34, B KORPUSAS, VILNIUS)</h4>
+          <h4 className="h4-gap">
+            CYBERCITY (ŠVITRIGAILOS G. 34, B KORPUSAS, VILNIUS)
+          </h4>
           <br />
           <div className="button-container">
             <Button
