@@ -117,6 +117,7 @@ h4 {
   color: #d5593e;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 12px;
 }
 
 .policy-section a:hover {

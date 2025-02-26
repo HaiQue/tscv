@@ -7,8 +7,8 @@ function HeroSection() {
     <>
       <div className="button-group">
         <Button label="PRANEŠĖJAI" anchor="text1" variant="primary" />
-        <Button label="Renginio Vieta" anchor="text2" variant="primary" />
-        <Button label="Įsigyti Bilietą" anchor="text3" variant="primary" />
+        <Button label="Renginio Vieta" anchor="text3" variant="primary" />
+        <Button label="Įsigyti Bilietą" anchor="text2" variant="primary" />
       </div>
       <div className="main-section">
         {/* Left Text Section */}

@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import "./RegistrationForm.css";
 import { Link } from "react-router-dom";
 
-const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
-  const [tickets, setTickets] = useState(
-    Array(ticketCount).fill({
-      price: 100,
-      isActive: true,
-    })
-  );
+const RegistrationForm = ({ isOpen, onClose }) => {
+  const ticketPrice = 100;
 
   const [formData, setFormData] = useState({
     vardas: "",
@@ -129,14 +124,21 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
       return;
     }
 
+    // Create a ticket object to match what the server expects
+    const ticket = {
+      price: ticketPrice,
+      isActive: true,
+    };
+
     const emailData = {
       userEmail: formData.email,
       adminEmail: "konferencija@kraujodonoryste.lt",
       subject: "SAUGUS KRAUJAS NKC 2025 Registracija",
       userData: {
         ...formData,
-        tickets: activeTickets,
-        totalAmount: currentTotal,
+        // Include tickets array with a single ticket to match server expectations
+        tickets: [ticket],
+        totalAmount: ticketPrice,
       },
     };
 
@@ -164,22 +166,6 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
       alert(`Registracija nepavyko. Klaida: ${error.message}`);
     }
   };
-
-  const handleTicketChange = (index, action, e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const newTickets = [...tickets];
-    if (action === "remove") {
-      newTickets[index].isActive = false;
-    } else if (action === "add") {
-      newTickets.push({ price: 100, isActive: true });
-    }
-    setTickets(newTickets);
-  };
-
-  const activeTickets = tickets.filter((ticket) => ticket.isActive);
-  const currentTotal = activeTickets.length * 100;
 
   if (!isOpen) return null;
 
@@ -344,7 +330,7 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Privatumo ir slapukų politika
+                    Privatumo politika
                   </Link>{" "}
                   <span className="red">*</span>
                 </span>
@@ -368,33 +354,14 @@ const RegistrationForm = ({ isOpen, onClose, ticketCount, totalPrice }) => {
           <div className="form-section">
             <h3 className="order-info">Jūsų užsakymas</h3>
             <div className="tickets-list">
-              {tickets.map(
-                (ticket, index) =>
-                  ticket.isActive && (
-                    <div key={index} className="ticket-item">
-                      <span>SAUGUS KRAUJAS NKC 2025 </span>
-                      <span>{ticket.price} €</span>
-                      <button
-                        type="button"
-                        className="remove-ticket"
-                        onClick={(e) => handleTicketChange(index, "remove", e)}
-                      >
-                        ×
-                      </button>
-                    </div>
-                  )
-              )}
-              <button
-                type="button"
-                className="add-ticket"
-                onClick={(e) => handleTicketChange(null, "add", e)}
-              >
-                + Pridėti bilietą
-              </button>
+              <div className="ticket-item">
+                <span>SAUGUS KRAUJAS NKC 2025 </span>
+                <span>{ticketPrice} €</span>
+              </div>
             </div>
             <div className="total-price">
               <span>Viso:</span>
-              <span>{currentTotal} €</span>
+              <span>{ticketPrice} €</span>
             </div>
           </div>
         </div>

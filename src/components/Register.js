@@ -1,25 +1,13 @@
 import React, { useState } from "react";
-
-import RegistrationModal from "./RegistrationModal";
 import RegistrationForm from "./RegistrationForm";
-
 import Button from "./Button";
 import "./Register.css";
 
 const Register = () => {
-  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
   const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
-  const [ticketData, setTicketData] = useState(null);
-
-  const handleTicketSelection = (data) => {
-    setTicketData(data);
-    setIsTicketModalOpen(false);
-    setIsRegistrationFormOpen(true);
-  };
 
   const handleRegistrationClose = () => {
     setIsRegistrationFormOpen(false);
-    setTicketData(null); // Reset ticket data when form is closed
   };
 
   return (
@@ -36,25 +24,15 @@ const Register = () => {
         <Button
           label="REGISTRUOTIS"
           variant="secondary"
-          onClick={() => setIsTicketModalOpen(true)}
+          onClick={() => setIsRegistrationFormOpen(true)}
           className="register-button"
         />
       </div>
 
-      <RegistrationModal
-        isOpen={isTicketModalOpen}
-        onClose={() => setIsTicketModalOpen(false)}
-        onContinue={handleTicketSelection}
+      <RegistrationForm
+        isOpen={isRegistrationFormOpen}
+        onClose={handleRegistrationClose}
       />
-
-      {ticketData && (
-        <RegistrationForm
-          isOpen={isRegistrationFormOpen}
-          onClose={handleRegistrationClose}
-          ticketCount={ticketData.ticketCount}
-          totalPrice={ticketData.totalPrice}
-        />
-      )}
     </div>
   );
 };

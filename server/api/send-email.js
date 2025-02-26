@@ -48,22 +48,19 @@ router.post("/send-email", async (req, res) => {
     const userEmailContent = `
       Gerb. ${userData.vardas} ${userData.pavarde},
 
-      Dėkojame už registraciją į konferenciją SAUGUS KRAUJAS NKC 2025!
-
-      Jūsų registracijos duomenys:
-      - Vardas, pavardė: ${userData.vardas} ${userData.pavarde}
-      - Pareigos: ${userData.pareigos}
-      - Darbovietė: ${userData.darboviete}
-      - El. paštas: ${userData.email}
-      - Tel. numeris: ${userData.phone}
-      - Bilietų skaičius: ${userData.tickets.length}
-      - Bendra suma: ${userData.totalAmount} €
-      ${userData.vertimasPriemone ? "- Vertimo priemonė: Taip" : ""}
-
-      Netrukus su Jumis susisieksime dėl apmokėjimo.
-
+      Dėkojame už registraciją į konferenciją SAUGUS KRAUJAS NKC kuri vyks gegužės 13 dieną CyberCity (Švitrigailos g. 34, B korpusas, Vilnius)
+      Jūsų registracija sėkmingai patvirtinta. Norėdami užbaigti registracijos procesą, prašome pervesti dalyvio mokestį per 3 darbo dienas į žemiau pateiktą sąskaitą.
+      Banko rekvizitai:
+      Gavėjas: VšĮ Nacionalinis kraujo centras
+      Sąskaitos numeris: LT227300010101375039
+      Bankas: Swedbank AB, b.k. 73000
+      Mokėjimo paskirtis: Konferencija ${userData.vardas} ${userData.pavarde}
+      Suma: ${userData.totalAmount} €
+      Jei mokėjimas nebus gautas per 3 darbo dienas, jūsų registracija bus automatiškai atšaukta.
+      Jeigu turite klausimų, kreipkitės el. paštu konferencija@kraujodonoryste.lt arba telefonu +37052392444.
+      Laukiame jūsų konferencijoje!
       Pagarbiai,
-      Konferencijos organizatoriai
+      VšĮ Nacionalinis kraujo centras
     `;
 
     // Create email template for admin

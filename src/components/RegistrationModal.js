@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./RegistrationModal.css";
 
 const RegistrationModal = ({ isOpen, onClose, onContinue }) => {
-  const [ticketCount, setTicketCount] = useState(1);
   const TICKET_PRICE = 100;
 
   if (!isOpen) return null;
 
   const handleContinue = () => {
-    onContinue({ ticketCount, totalPrice: ticketCount * TICKET_PRICE });
+    // Always pass 1 as the ticket count
+    onContinue({ ticketCount: 1, totalPrice: TICKET_PRICE });
   };
 
   return (
@@ -24,19 +24,9 @@ const RegistrationModal = ({ isOpen, onClose, onContinue }) => {
         </div>
 
         <div className="modal-body">
-          <p>Įveskite norimą bilietų kiekį:</p>
-          <div className="ticket-selector">
-            <input
-              type="number"
-              min="1"
-              value={ticketCount}
-              onChange={(e) =>
-                setTicketCount(Math.max(1, parseInt(e.target.value) || 1))
-              }
-            />
-          </div>
+          <p>Dalyvio registracija:</p>
           <div className="price-info">
-            <p>Bendra suma: {ticketCount * TICKET_PRICE} €</p>
+            <p>Registracijos mokestis: {TICKET_PRICE} €</p>
           </div>
           <button className="register-button" onClick={handleContinue}>
             TĘSTI

@@ -44,14 +44,13 @@ const Footer = () => {
               Dalyvio keitimo, dalyvavimo atšaukimo ir pinigų grąžinimo
               taisyklės
             </Link>
-          </p>
-          <p>
+            <br />
             <Link
               to="/privacy-policy"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Privatumas ir slapukų politika
+              Privatumo politika
             </Link>
           </p>
         </div>
