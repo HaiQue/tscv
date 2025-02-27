@@ -201,7 +201,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
 
         <h2 className="form-title">Registracijos forma</h2>
 
-        <div className="form-grid">
+        <div className="form-content">
           <div className="form-section">
             <div className="form-group">
               <label>
@@ -351,7 +351,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          <div className="form-section">
+          {/* <div className="form-section">
             <h3 className="order-info">Jūsų užsakymas</h3>
             <div className="tickets-list">
               <div className="ticket-item">
@@ -363,7 +363,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
               <span>Viso:</span>
               <span>{ticketPrice} €</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="form-footer">

@@ -2,6 +2,7 @@ import React from "react";
 import "./SpeakerProfile.css";
 
 const SpeakerProfile = ({
+  id,
   imageUrl,
   category,
   name,
@@ -12,6 +13,7 @@ const SpeakerProfile = ({
 }) => {
   return (
     <div
+      id={id}
       className={`speaker-container ${
         imagePosition === "right" ? "reverse" : ""
       } ${theme}`}
@@ -20,7 +22,6 @@ const SpeakerProfile = ({
         <span className="category">{category}</span>
         <h2 className="name">{name}</h2>
         <p className="description">{description}</p>
-        {/* <button className="learn-more">{buttonText}</button> */}
       </div>
       <div className="speaker-image">
         <img src={imageUrl} alt={name} />

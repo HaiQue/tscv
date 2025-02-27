@@ -6,6 +6,7 @@ function RenderSpeakers() {
   return (
     <div>
       <SpeakerProfile
+        id="speaker1"
         imageUrl={photo1}
         category="Culture of Reinvention"
         name="Erin Meyer"
@@ -14,6 +15,7 @@ function RenderSpeakers() {
         theme="dark"
       />
       <SpeakerProfile
+        id="speaker2"
         imageUrl={photo2}
         category="Dark Side of Leadership"
         name="Prof. Manfred Kets de Vries"
@@ -23,36 +25,40 @@ function RenderSpeakers() {
         theme="light"
       />
       <SpeakerProfile
+        id="speaker3"
         imageUrl={photo1}
         category="Culture of Reinvention"
-        name="Erin Meyer"
+        name="Johan Norberg"
         description="INSEAD vadybos ir inovacijų profesorė, bestselerio 'No Rules Rule' bendraautorė..."
-        buttonText="Daugiau apie Erin Meyer"
+        buttonText="Daugiau apie Johan Norberg"
         theme="dark"
       />
       <SpeakerProfile
+        id="speaker4"
         imageUrl={photo2}
         category="Dark Side of Leadership"
-        name="Prof. Manfred Kets de Vries"
+        name="David McWilliams"
         description="Lyderystės provokatorius, Raoul de Vitry d'Avaucourt..."
-        buttonText="Daugiau apie Prof. Manfred Kets de Vries"
+        buttonText="Daugiau apie David McWilliams"
         imagePosition="right"
         theme="light"
       />
       <SpeakerProfile
+        id="speaker5"
         imageUrl={photo1}
         category="Culture of Reinvention"
-        name="Erin Meyer"
+        name="Amy Gallo"
         description="INSEAD vadybos ir inovacijų profesorė, bestselerio 'No Rules Rule' bendraautorė..."
-        buttonText="Daugiau apie Erin Meyer"
+        buttonText="Daugiau apie Amy Gallo"
         theme="dark"
       />
       <SpeakerProfile
+        id="speaker6"
         imageUrl={photo2}
         category="Dark Side of Leadership"
-        name="Prof. Manfred Kets de Vries"
+        name="Hal Gregersen"
         description="Lyderystės provokatorius, Raoul de Vitry d'Avaucourt..."
-        buttonText="Daugiau apie Prof. Manfred Kets de Vries"
+        buttonText="Daugiau apie Hal Gregersen"
         imagePosition="right"
         theme="light"
       />

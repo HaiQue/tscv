@@ -40,11 +40,6 @@ const Footer = () => {
         {/* Right Side: Policies */}
         <div className="policy-section">
           <p>
-            <Link to="/refund-policy" target="_blank" rel="noopener noreferrer">
-              Dalyvio keitimo, dalyvavimo atšaukimo ir pinigų grąžinimo
-              taisyklės
-            </Link>
-            <br />
             <Link
               to="/privacy-policy"
               target="_blank"

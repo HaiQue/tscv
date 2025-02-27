@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
-import Cybercity from "../imgs/Cybercity.png";
+import Cybercity from "../imgs/Cybercity2.jpg";
 import "./LocationSection.css";
 // import "../pages/Home.css";
 

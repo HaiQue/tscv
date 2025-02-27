@@ -73,6 +73,7 @@
   margin: 8px 0;
   line-height: 1.4;
   display: block;
+  font-size: 12px;
 }
 
 .contact-section h4 {
@@ -110,6 +111,8 @@ h4 {
   .policy-section {
     width: 100%;
     text-align: center;
+    margin-top: 0px;
+    /* font-size: 12px; */
   }
 }
 

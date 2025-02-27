@@ -41,9 +41,10 @@
   font-size: 26px;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.form-content {
+  display: inline-grid;
+  align-items: center;
+  width: 60%;
   gap: 30px;
 }
 
