@@ -1,4 +1,4 @@
-const excel = require("excel4node");
+const XLSX = require("xlsx");
 const path = require("path");
 const fs = require("fs");
 
@@ -11,10 +11,6 @@ if (!fs.existsSync(uploadsDir)) {
 const addRegistrationToExcel = async (userData) => {
   const filePath = path.join(uploadsDir, "registrations.xlsx");
 
-  // Create or load workbook
-  let workbook = new excel.Workbook();
-  let worksheet;
-
   // Define headers
   const headers = [
     "Registracijos data",
@@ -26,64 +22,62 @@ const addRegistrationToExcel = async (userData) => {
     "Tel. numeris",
     "Vertimo priemonė",
     "Bilietų skaičius",
-    "Suma (€)",
   ];
 
   try {
-    // Create new worksheet
-    worksheet = workbook.addWorksheet("Registracijos");
+    let workbook;
+    let worksheet;
+    let existingData = [];
 
-    // Add headers style
-    const headerStyle = workbook.createStyle({
-      font: {
-        bold: true,
-        color: "#000000",
-        size: 12,
-      },
-      fill: {
-        type: "pattern",
-        patternType: "solid",
-        fgColor: "#CCCCCC",
-      },
-    });
-
-    // Add headers
-    headers.forEach((header, i) => {
-      worksheet
-        .cell(1, i + 1)
-        .string(header)
-        .style(headerStyle);
-    });
-
-    // Get existing data if file exists
-    let rowNumber = 2;
+    // Check if file exists
     if (fs.existsSync(filePath)) {
-      // Logic to read existing data could be added here
-      // For now, we'll just append to the end
+      // Read existing workbook
+      workbook = XLSX.readFile(filePath);
+      const sheetName = workbook.SheetNames[0];
+      worksheet = workbook.Sheets[sheetName];
+
+      // Convert existing data to JSON
+      existingData = XLSX.utils.sheet_to_json(worksheet);
+    } else {
+      // Create new workbook
+      workbook = XLSX.utils.book_new();
+
+      // Create empty worksheet with headers
+      worksheet = XLSX.utils.aoa_to_sheet([headers]);
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Registracijos");
     }
 
-    // Add new registration data
+    // Prepare new data row
     const date = new Date().toLocaleString("lt-LT");
-    worksheet.cell(rowNumber, 1).string(date);
-    worksheet.cell(rowNumber, 2).string(userData.vardas);
-    worksheet.cell(rowNumber, 3).string(userData.pavarde);
-    worksheet.cell(rowNumber, 4).string(userData.pareigos);
-    worksheet.cell(rowNumber, 5).string(userData.darboviete);
-    worksheet.cell(rowNumber, 6).string(userData.email);
-    worksheet.cell(rowNumber, 7).string(userData.phone || "");
-    worksheet
-      .cell(rowNumber, 8)
-      .string(userData.vertimasPriemone ? "Taip" : "Ne");
-    worksheet.cell(rowNumber, 9).number(userData.tickets.length);
-    worksheet.cell(rowNumber, 10).number(userData.totalAmount);
+    const newRow = {
+      [headers[0]]: date,
+      [headers[1]]: userData.vardas,
+      [headers[2]]: userData.pavarde,
+      [headers[3]]: userData.pareigos,
+      [headers[4]]: userData.darboviete,
+      [headers[5]]: userData.email,
+      [headers[6]]: userData.phone || "",
+      [headers[7]]: userData.vertimasPriemone ? "Taip" : "Ne",
+      [headers[8]]: userData.tickets.length,
+    };
 
-    // Auto-set column widths
-    headers.forEach((_, i) => {
-      worksheet.column(i + 1).setWidth(20);
+    // Add new data row to existing data
+    existingData.push(newRow);
+
+    // Convert data back to worksheet
+    const newWorksheet = XLSX.utils.json_to_sheet(existingData, {
+      header: headers,
     });
 
-    // Save the file
-    await workbook.write(filePath);
+    // Apply column widths
+    const colWidths = headers.map(() => ({ wch: 20 }));
+    newWorksheet["!cols"] = colWidths;
+
+    // Replace existing worksheet with updated one
+    workbook.Sheets[workbook.SheetNames[0]] = newWorksheet;
+
+    // Write workbook to file
+    XLSX.writeFile(workbook, filePath);
     return true;
   } catch (error) {
     console.error("Excel creation error:", error);
