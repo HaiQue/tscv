@@ -78,34 +78,6 @@ const PrivacyPolicy = () => {
               konferencijoje vardas (-ai) ir pavardė (-ės).
             </p>
           </div>
-
-          <div className="info-block">
-            <h3>Su atliktu mokėjimu susiję duomenys</h3>
-            <p>
-              Priklausomai nuo jūsų pasirinkto apmokėjimo būdo, mes galime
-              tvarkyti tokius su atliktu mokėjimu susijusius duomenis:
-            </p>
-            <div className="data-list">
-              <p>mokėjimo transakcijos data;</p>
-              <p>operacijos suma;</p>
-              <p>Jūsų mokėjimo paslaugos teikėjas;</p>
-              <p>Jūsų bankas ir pavedimo numeris;</p>
-              <p>mokėjimo statusas;</p>
-              <p>jūsų vardas, pavardė;</p>
-              <p>užsakymo ID/numeris;</p>
-              <p>užsakymo tipas (pirkinys);</p>
-              <p>apmokėjimo ID numeris (mokant banko kortele);</p>
-              <p>nuolaidos kodai.</p>
-            </div>
-          </div>
-
-          <p className="info-note">
-            Šių duomenų šaltinis esate Jūs bei tretieji asmenys (mokėjimo
-            paslaugos teikėjas, bankas – tam tikrų su atliktu mokėjimu susijusiu
-            duomenų gavimo atveju), taip pat tam tikri duomenys yra
-            sugeneruojami automatiškai (pvz. Jums priskirtas įsigyto bilieto ID
-            numeris).
-          </p>
         </section>
 
         <section className="policy-section">
