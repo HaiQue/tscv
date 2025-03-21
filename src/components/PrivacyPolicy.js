@@ -161,7 +161,7 @@ const PrivacyPolicy = () => {
           </p>
           <p className="contact-info">
             Jei turite klausimų dėl mūsų paslaugų teikėjų, prašome susisiekti
-            šiuo el. pašto adresu: ________
+            šiuo el. pašto adresu: konferencija@kraujodonoryste.lt
           </p>
           <p>
             Tam tikrais atvejais mes galime atskleisti Jūsų informaciją kitiems,

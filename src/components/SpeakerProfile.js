@@ -10,6 +10,7 @@ const SpeakerProfile = ({
   buttonText,
   imagePosition = "left",
   theme = "light",
+  imageSize = "default",
 }) => {
   return (
     <div
@@ -24,7 +25,11 @@ const SpeakerProfile = ({
         <p className="description">{description}</p>
       </div>
       <div className="speaker-image">
-        <img src={imageUrl} alt={name} />
+        <img
+          src={imageUrl}
+          alt={name}
+          className={`speaker-image-${imageSize}`} // Add a dynamic class based on the imageSize prop
+        />
       </div>
     </div>
   );

@@ -114,11 +114,31 @@
 
 .speaker-image img {
   width: 100%;
-  max-width: 350px;
+  /*max-width: 500px;  Updated for new partiticapts */
   max-height: 500px;
   height: auto; /* How will be used most likely with prod data */
   height: 500px; /* temporary fix for 2nd participant */
   object-fit: cover;
+}
+
+/* Default size class */
+.speaker-image-default {
+  max-width: 500px;
+}
+
+/* Small size class */
+.speaker-image-small {
+  max-width: 350px;
+}
+
+/* Medium size class */
+.speaker-image-medium {
+  max-width: 400px;
+}
+
+/* Large size class */
+.speaker-image-large {
+  max-width: 600px;
 }
 
 @media (max-width: 768px) {
@@ -134,5 +154,6 @@
   .speaker-content,
   .speaker-image {
     max-width: 100%;
+    /* margin-left: 0px; */
   }
 }
