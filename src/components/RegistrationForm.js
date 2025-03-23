@@ -144,7 +144,8 @@ const RegistrationForm = ({ isOpen, onClose }) => {
 
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/send-email`,
+        `${process.env.REACT_APP_API_URL}/api/send-email.php`,
+        // "http://localhost/tscv/api/send-email.php",
         {
           method: "POST",
           headers: {
@@ -350,20 +351,6 @@ const RegistrationForm = ({ isOpen, onClose }) => {
               )}
             </div>
           </div>
-
-          {/* <div className="form-section">
-            <h3 className="order-info">Jūsų užsakymas</h3>
-            <div className="tickets-list">
-              <div className="ticket-item">
-                <span>SAUGUS KRAUJAS NKC 2025 </span>
-                <span>{ticketPrice} €</span>
-              </div>
-            </div>
-            <div className="total-price">
-              <span>Viso:</span>
-              <span>{ticketPrice} €</span>
-            </div>
-          </div> */}
         </div>
 
         <div className="form-footer">

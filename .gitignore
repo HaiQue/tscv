@@ -20,6 +20,7 @@
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -28,6 +29,35 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# PHP specific
+/data/registrations.csv
+/config.env
+
+# Hostinger/FTP leftovers
+*.zip
+*.tar.gz
+*.bak
+.sftpConfig.json
+.idea/
+.vscode/
+
+#php mailer
+/phpmailer/COMMITMENT
+/phpmailer/DSNConfigurator.php
+/phpmailer/OAuth.php
+/phpmailer/POP3.php
+/phpmailer/get_oauth_token.php
+/phpmailer/composer.json
+/phpmailer/README.md
+/phpmailer/VERSION
+/phpmailer/SECURITY.md
+/phpmailer/LICENSE
+/phpmailer/.github/
+/phpmailer/language/
+/phpmailer/test/
+/phpmailer/examples/
+/phpmailer/docs/
 
 # Environment files
 #.env
