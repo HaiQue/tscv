@@ -23,26 +23,45 @@
   transition: all 0.3s ease;
 }
 
-/* Large screens: 6 images per row */
+/* Large screens: 6 images per row 
+   Temporary disabled 
+*/
+/* @media (min-width: 1400px) {
+  .carousel-slide {
+    width: calc((100% - 100px) / 6); 
+  }
+} */
+
+/* Large screens: 4 images per row */
 @media (min-width: 1400px) {
   .carousel-slide {
-    width: calc((100% - 100px) / 6); /* Adjusted for new gap */
+    width: calc((100% - 400px) / 4);
+    /* -60px .Should be lower but cover image lowers visibility */
   }
 }
 
-/* Medium screens: 3 images per row */
+/* Medium screens: 3 images per row 
+   Temporary disabled 
+*/
+/* @media (max-width: 1399px) and (min-width: 800px) {
+  .carousel-slide {
+    width: calc((100% - 40px) / 3); 
+  }
+} */
+
+/* Medium screens: 2 images per row */
 @media (max-width: 1399px) and (min-width: 800px) {
   .carousel-slide {
-    width: calc((100% - 40px) / 3); /* Adjusted for new gap */
+    width: calc((100% - 20px) / 2);
   }
 }
 
 /* Small screens: 1 image per row */
 @media (max-width: 799px) {
   .carousel-slide {
-    width: 80%; /* Reduced width for single image */
-    margin: 0 auto; /* Center the image */
-    height: 400px; /* Reduced height for better mobile view */
+    width: 80%;
+    margin: 0 auto;
+    height: 400px;
   }
 
   .carousel-track {
@@ -87,36 +106,3 @@
   border-radius: 5px;
   white-space: nowrap;
 }
-
-/*
-partially commmented out
-/* .carousel-button {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 10;
-}
-
-.carousel-button.prev {
-  left: 20px;
-}
-
-.carousel-button.next {
-  right: 20px;
-}
-
-.carousel-button:hover {
-  background: rgba(0, 0, 0, 0.7);
-} 
-  ------
-*/

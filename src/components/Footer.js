@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Susisiekime</h4>
           <p>
-            <a href="tel:+37000000000">+370 (000) 00 000</a>
+            <a href="tel:+370 5 239 2444">+370 5 239 2444</a>
           </p>
           <p>
             <a href="mailto:konferencija@kraujodonoryste.lt">

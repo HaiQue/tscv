@@ -15,7 +15,7 @@ function RenderSpeakers() {
         imageUrl={photoSpeaker1}
         category="Racionalus kraujo naudojimas – gerokai anksčiau nei ligoninės erdvėse"
         name="Andrius Macas"
-        description="Prof. dr. Andrius Macas ne tik Lietuvos sveikatos universiteto Anesteziologijos klinikos vadovas ir LSMU Medicinos fakulteto dekanas, bet ir visuomenėje gerai žinoma asmenybė. Jo nuomonės klausiama įvairiais klausimais, profesorių galime išvysti ir išgirsti televizijos ir radijo laidose, o mintis ir komentarus skaityti ne tik naujienų portaluose, bet ir socialinėje erdvėje, kur jo veiklą seka gausus būrys sekėjų. Profesorius buvo vienas pirmųjų, kuris pradėjo garsiai kalbėti apie pacientų saugą Lietuvoje ir neabejotinai nusipelnė pacientų saugos ambasadoriaus vardo. Konferencijos  metu prof. Andrius Macas diskutuos kaip tausoti kraują gerokai anksčiau nei pačioje ligoninėje."
+        description="Prof. dr. Andrius Macas ne tik Lietuvos sveikatos universiteto Anesteziologijos klinikos vadovas ir LSMU Medicinos fakulteto dekanas, bet ir visuomenėje gerai žinoma asmenybė. Jo nuomonės klausiama įvairiais klausimais, profesorių galime išvysti ir išgirsti televizijos ir radijo laidose, o mintis ir komentarus skaityti ne tik naujienų portaluose, bet ir socialinėje erdvėje, kur jo veiklą seka gausus būrys sekėjų. Profesorius buvo vienas pirmųjų, kuris pradėjo garsiai kalbėti apie pacientų saugą Lietuvoje ir neabejotinai nusipelnė pacientų saugos ambasadoriaus vardo. Konferencijos  metu prof. Andrius Macas diskutuos, kaip tausoti kraują gerokai anksčiau nei pačioje ligoninėje."
         buttonText="Daugiau apie prof. dr. Andrių Macą"
         theme="dark"
       />
@@ -32,9 +32,9 @@ function RenderSpeakers() {
       <SpeakerProfile
         id="speaker3"
         imageUrl={photoSpeaker3}
-        category="Pacientų kraujo valdymas Šiaurės Estijos medicinos centro ligoninėje."
+        category="Pacientų kraujo valdymas Šiaurės Estijos medicinos centro ligoninėje"
         name="Riin Kullaste"
-        description="Gydytoja Riin Kullaste dirbo Šiaurės Estijos medicinos centro ligoninės kraujo banke 1997–2005 m. ir 2022–2025 m. Laiką tarp dviejų ligoninėje praleistų laikotarpių ji užėmė skirtingas pareigas Kraujo centre, 14 metų – direktorės pareigas."
+        description="Gydytoja Riin Kullaste Šiaurės Estijos medicinos centro ligoninės kraujo banke dirbo 1997–2005 m. ir vėl grįžo 2022–2025 m. Tarp šių laikotarpių ji užėmė įvairias pareigas Kraujo centre, 14 metų vadovavo kaip direktorė."
         buttonText="Daugiau apie Johan Norberg"
         theme="dark"
       />
@@ -48,7 +48,7 @@ function RenderSpeakers() {
         theme="light"
         imageSize="small"
       />
-      <SpeakerProfile
+      {/* <SpeakerProfile
         id="speaker5"
         imageUrl={photo1}
         category="Culture of Reinvention"
@@ -66,7 +66,7 @@ function RenderSpeakers() {
         buttonText="Daugiau apie Hal Gregersen"
         imagePosition="right"
         theme="light"
-      />
+      /> */}
     </div>
   );
 }

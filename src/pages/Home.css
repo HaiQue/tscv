@@ -173,10 +173,6 @@ h6 {
   text-align: center;
 }
 
-/* .text-column-mg {
-  margin-right: 200px;
-} */
-
 .image-column {
   display: flex;
   align-items: center;
@@ -197,14 +193,8 @@ h6 {
   width: 200px;
 }
 
-/* Text Section Adjustments */
-/* .text-section {
-  width: 60%;
-} */
-
 .text-section h1 {
   line-height: 1.1;
-  /* margin-bottom: 2rem; */
 }
 
 .text3 iframe {
@@ -316,5 +306,13 @@ h6 {
   .text-column {
     align-items: center;
     text-align: center;
+  }
+
+  .organizer-container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
   }
 }

@@ -12,8 +12,8 @@ const participants = [
   { id: "speaker2", name: "Arūnas Gelmanas", image: photoSpeaker2 },
   { id: "speaker3", name: "Riin Kullaste", image: photoSpeaker3 },
   { id: "speaker4", name: "Aurora Espinosa Fernandez", image: photoSpeaker4 },
-  { id: "speaker5", name: "Agneta Wikman", image: photo1 },
-  { id: "speaker6", name: "Hal Gregersen", image: photo2 },
+  // { id: "speaker5", name: "Agneta Wikman", image: photo1 },
+  // { id: "speaker6", name: "Hal Gregersen", image: photo2 },
 ];
 
 function Carousel() {
