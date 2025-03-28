@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Configure PHPMailer
     $mail = new PHPMailer(true);
     try {
-        $mail->CharSet = 'UTF-8'; // ✅ This fixes Lithuanian symbols
+        $mail->CharSet = 'UTF-8'; 
         $mail->isSMTP();
         $mail->Host = "cphostingas.telecentras.lt";
         $mail->SMTPAuth = true;
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // User email content
         $mail->addAddress($userEmail);
         $mail->Subject = "=?UTF-8?B?" . base64_encode("Registracija į konferenciją SAUGUS KRAUJAS NKC 2025") . "?=";
-        $mail->Body = "Gerb. {$userData["vardas"]} {$userData["pavarde"]},\n\nDėkojame už registraciją į konferenciją Saugus kraujas NKC kuri vyks gegužės 13 dieną CyberCity (Švitrigailos g. 34, B korpusas, Vilnius).\n\nJūsų registracija sėkmingai patvirtinta. Jeigu turite klausimų, kreipkitės el. paštu konferencija@kraujodonoryste.lt arba telefonu +37052392444.\n\nLaukiame jūsų konferencijoje!\n\nPagarbiai,\nVšĮ Nacionalinis kraujo centras";
+        $mail->Body = "Gerb. {$userData["vardas"]} {$userData["pavarde"]},\n\nDėkojame už registraciją į konferenciją „Saugus kraujas NKC 2025. Racionalus kraujo naudojimas“, kuri vyks gegužės 13 dieną CyberCity (Švitrigailos g. 34, B korpusas, Vilnius).\n\nJūsų registracija sėkmingai patvirtinta. Jeigu turite klausimų, kreipkitės el. paštu konferencija@kraujodonoryste.lt arba telefonu +37052392444.\n\nLaukiame jūsų konferencijoje!\n\nPagarbiai,\nVšĮ Nacionalinis kraujo centras";
         $mail->send();
 
         // Admin email content

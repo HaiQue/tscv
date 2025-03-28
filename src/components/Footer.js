@@ -14,7 +14,7 @@ const Footer = () => {
             <span>Saugus</span>
             <span>Kraujas</span>
             <span>NKC</span>
-            <span>2025</span>
+            <span className="orange">2025</span>
           </div>
         </div>
 

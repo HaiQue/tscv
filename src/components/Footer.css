@@ -48,13 +48,18 @@
   fill: currentColor; /* Ensure it applies */
 }
 
+.orange {
+  color: #d5593e;
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
   font-size: 14px;
   font-weight: bold;
-  color: #333;
+  color: rgb(9, 1, 95);
+  text-align: left;
 }
 
 .contact-section,
@@ -82,7 +87,6 @@
 
 h4 {
   text-transform: none;
-  color: #333;
 }
 
 .footer-contact a {

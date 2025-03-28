@@ -16,7 +16,8 @@ const Register = () => {
         <div className="text-column-mg">
           <h2 className="register-title">Registracija į konferenciją</h2>
           <h4 className="register-price">
-            Bus išduodami 8 val. kvalifikacijos tobulinimo pažymėjimai
+            Bus išduodami 8 valandų trukmės profesinės kvalifikacijos tobulinimo
+            sertifikatai.
           </h4>
         </div>
         <Button

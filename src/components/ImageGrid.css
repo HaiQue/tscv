@@ -26,19 +26,18 @@
 /* Large screens: 6 images per row 
    Temporary disabled 
 */
-/* @media (min-width: 1400px) {
-  .carousel-slide {
-    width: calc((100% - 100px) / 6); 
-  }
-} */
-
-/* Large screens: 4 images per row */
 @media (min-width: 1400px) {
   .carousel-slide {
-    width: calc((100% - 400px) / 4);
-    /* -60px .Should be lower but cover image lowers visibility */
+    width: calc((100% - 100px) / 6);
   }
 }
+
+/* Large screens: 4 images per row */
+/* @media (min-width: 1400px) {
+  .carousel-slide {
+    width: calc((100% - 400px) / 4);
+  }
+} */
 
 /* Medium screens: 3 images per row 
    Temporary disabled 
@@ -95,14 +94,22 @@
 
 .participant-name {
   position: absolute;
-  bottom: 20px; /* Moved up slightly */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7); /* Darker background */
-  color: #fff;
-  padding: 8px 16px; /* Increased padding */
-  font-size: 16px; /* Increased font size */
+  /* background: rgba(0, 0, 0, 0.7);  Old */
+  background: floralwhite; /* New */
+  /* color: #fff; old */
+  color: rgb(9, 1, 95);
+  padding: 8px 16px;
+  font-size: 16px;
   font-weight: bold;
   border-radius: 5px;
   white-space: nowrap;
+}
+
+@media (max-width: 756px) {
+  .participant-name {
+    text-wrap: auto;
+  }
 }

@@ -1,10 +1,11 @@
 import "./ImageGrid.css";
 import photo1 from "../imgs/photo_1.jpg";
 import photo2 from "../imgs/photo_2.jpg";
-import photoSpeaker1 from "../imgs/Andrius Macas.png";
-import photoSpeaker2 from "../imgs/Arunas Gelmanas.png";
-import photoSpeaker3 from "../imgs/Riin Kullaste.png";
-import photoSpeaker4 from "../imgs/Aurora.png";
+import photoSpeaker1 from "../imgs/Andrius Macasb.png";
+import photoSpeaker2 from "../imgs/Arunas Gelmanasb.png";
+import photoSpeaker3 from "../imgs/Riin Kullasteb.png";
+import photoSpeaker4 from "../imgs/Aurorab.png";
+import photoSpeakerUnknown from "../imgs/unknown.png";
 
 // Add IDs to each participant to link them with their profiles
 const participants = [
@@ -12,8 +13,16 @@ const participants = [
   { id: "speaker2", name: "Arūnas Gelmanas", image: photoSpeaker2 },
   { id: "speaker3", name: "Riin Kullaste", image: photoSpeaker3 },
   { id: "speaker4", name: "Aurora Espinosa Fernandez", image: photoSpeaker4 },
-  // { id: "speaker5", name: "Agneta Wikman", image: photo1 },
-  // { id: "speaker6", name: "Hal Gregersen", image: photo2 },
+  {
+    id: "speaker5",
+    name: "Informacija apie pranešėją ruošiama",
+    image: photoSpeakerUnknown,
+  },
+  {
+    id: "speaker6",
+    name: "Informacija apie pranešėją ruošiama",
+    image: photoSpeakerUnknown,
+  },
 ];
 
 function Carousel() {

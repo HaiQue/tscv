@@ -1,4 +1,4 @@
-.button-group {
+/* .button-group {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,7 +6,7 @@
   gap: 160px;
   margin: 0;
   margin-bottom: 80px;
-}
+} */
 
 .button-group-horizontal {
   display: flex;
@@ -30,6 +30,7 @@
   transition: all 0.3s ease;
   display: block;
   margin: 8px auto; /* Reduced margin */
+  white-space: nowrap;
 }
 
 @media (max-width: 1300px) {
@@ -46,17 +47,17 @@
 }
 
 @media (max-width: 1024px) {
-  .button-group,
+  /* .button-group,
   .button-group-horizontal {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-bottom: 40px;
-    width: 80%; /* Container width */
+    width: 80%; 
     margin-left: auto;
     margin-right: auto;
     align-items: center;
-  }
+  } */
 
   .btn {
     width: 80%; /* Make buttons full width of their container */

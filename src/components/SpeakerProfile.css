@@ -2,7 +2,7 @@
   /* background-color: black; */
   display: flex;
   align-items: center;
-  gap: 18rem;
+  gap: 16rem;
   padding: 2rem;
   /* margin: 2rem 0; */
   min-height: 400px;
@@ -107,9 +107,9 @@
 
 .speaker-image {
   flex: 1;
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
 
 .speaker-image img {
