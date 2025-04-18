@@ -308,7 +308,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
 
             <div className="form-group checkbox-group">
               <label className="checkbox-label">
-                <span>Vertimo priemonė</span>
+                <span>Vertimo priemonė iš anglų į lietuvių kalbą</span>
                 <input
                   type="checkbox"
                   name="vertimasPriemone"
