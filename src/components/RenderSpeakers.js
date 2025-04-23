@@ -5,6 +5,7 @@ import photoSpeaker1 from "../imgs/Andrius Macas.png";
 import photoSpeaker2 from "../imgs/Arunas Gelmanas.png";
 import photoSpeaker3 from "../imgs/Riin Kullaste.png";
 import photoSpeaker4 from "../imgs/Aurora.png";
+import photoSpeaker5 from "../imgs/Agneta wikman.png";
 
 function RenderSpeakers() {
   return (
@@ -48,15 +49,17 @@ function RenderSpeakers() {
         theme="light"
         imageSize="small"
       />
-      {/* <SpeakerProfile
-        id="speaker5"
-        imageUrl={photo1}
-        category="Culture of Reinvention"
-        name="Amy Gallo"
-        description="INSEAD vadybos ir inovacijų profesorė, bestselerio 'No Rules Rule' bendraautorė..."
-        buttonText="Daugiau apie Amy Gallo"
-        theme="dark"
-      />
+      {
+        <SpeakerProfile
+          id="speaker5"
+          imageUrl={photoSpeaker5}
+          category="Trombocitų tiekimo sprendimai nutolusiose ligoninėse"
+          name="Agneta Wikman"
+          description="Prof. dr. Agneta Wikman nuo 2022 m. kovo 1 d. yra Transfuzinės medicinos docentė Klinikinės mokslo, intervencijos ir technologijų skyriuje bei konsultantė Karolinska universiteto ligoninėje. Jos klinikiniai tyrimai apima transfuzinės medicinos ir imunologijos sritis, ypač nėščių moterų diagnostiką ir stebėseną, kai susidaro antikūnai prieš vaisiaus kraujo ląsteles. Dabartiniai projektai susiję su kraujavimo gydymu, šaldytų trombocitų prieinamumo didinimu ir ilgesniu kraujo produktų saugojimo laiku nutolusių regionų ligoninėse. Taip pat ji rengia tyrimus dėl liofilizuotos plazmos taikymo priešhospitalinėje kraujavimo valdyme."
+          // buttonText="Daugiau apie Agnetą Wikman"
+          theme="dark"
+        />
+        /* 
       <SpeakerProfile
         id="speaker6"
         imageUrl={photo2}
@@ -66,7 +69,8 @@ function RenderSpeakers() {
         buttonText="Daugiau apie Hal Gregersen"
         imagePosition="right"
         theme="light"
-      /> */}
+      /> */
+      }
     </div>
   );
 }

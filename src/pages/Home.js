@@ -8,11 +8,13 @@ import RenderSpeakers from "../components/RenderSpeakers";
 import Register from "../components/Register";
 import HeroSection from "../components/HeroSection";
 import LocationSection from "../components/LocationSection";
+// import Count from "../utils/Count";
 
 function Home() {
   return (
     <div className="app-container">
       <HeroSection />
+      {/* <Count /> */}
       <div id="text1" className="section text1">
         <ImageGrid />
       </div>

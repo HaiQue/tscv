@@ -5,6 +5,7 @@ import photoSpeaker1 from "../imgs/Andrius Macasb.png";
 import photoSpeaker2 from "../imgs/Arunas Gelmanasb.png";
 import photoSpeaker3 from "../imgs/Riin Kullasteb.png";
 import photoSpeaker4 from "../imgs/Aurorab.png";
+import photoSpeaker5 from "../imgs/Agneta wikmanb.png";
 import photoSpeakerUnknown from "../imgs/unknown.png";
 
 // Add IDs to each participant to link them with their profiles
@@ -15,8 +16,8 @@ const participants = [
   { id: "speaker4", name: "Aurora Espinosa Fernandez", image: photoSpeaker4 },
   {
     id: "speaker5",
-    name: "Informacija apie pranešėją ruošiama",
-    image: photoSpeakerUnknown,
+    name: "Agneta Wikman",
+    image: photoSpeaker5,
   },
   {
     id: "speaker6",
