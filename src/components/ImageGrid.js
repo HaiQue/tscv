@@ -1,6 +1,4 @@
 import "./ImageGrid.css";
-import photo1 from "../imgs/photo_1.jpg";
-import photo2 from "../imgs/photo_2.jpg";
 import photoSpeaker1 from "../imgs/Andrius Macasb.png";
 import photoSpeaker2 from "../imgs/Arunas Gelmanasb.png";
 import photoSpeaker3 from "../imgs/Riin Kullasteb.png";
@@ -10,10 +8,10 @@ import photoSpeakerUnknown from "../imgs/unknown.png";
 
 // Add IDs to each participant to link them with their profiles
 const participants = [
-  { id: "speaker1", name: "Andrius Macas", image: photoSpeaker1 },
-  { id: "speaker2", name: "Arūnas Gelmanas", image: photoSpeaker2 },
   { id: "speaker3", name: "Riin Kullaste", image: photoSpeaker3 },
+  { id: "speaker1", name: "Andrius Macas", image: photoSpeaker1 },
   { id: "speaker4", name: "Aurora Espinosa Fernandez", image: photoSpeaker4 },
+  { id: "speaker2", name: "Arūnas Gelmanas", image: photoSpeaker2 },
   {
     id: "speaker5",
     name: "Agneta Wikman",
